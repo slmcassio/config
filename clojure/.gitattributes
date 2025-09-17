@@ -1,0 +1,11 @@
+# Configure Languages for GitHub repository using Linguist
+
+# EDN, Markdown & Make detection
+*.edn linguist-detectable=true
+*.md linguist-detectable=true
+make linguist-detectable=true
+
+# Exclude other file types
+*.css linguist-detectable=false
+*.js linguist-detectable=false
+*.html linguist-detectable=false

@@ -74,6 +74,15 @@ curl -s "https://get.sdkman.io" | bash
 fisher install reitzig/sdkman-for-fish@v2.1.0
 ```
 
+### 6. Clojure CLI Configuration
+
+**Apply Clojure CLI configuration**:
+
+```bash
+# Create symlink to entire folder to keep in sync
+ln -sf "$(pwd)/clojure" ~/.clojure
+```
+
 ## Backup Existing Configuration
 
 **Before applying new configurations, backup your existing setup**:
@@ -83,6 +92,7 @@ fisher install reitzig/sdkman-for-fish@v2.1.0
 mv ~/.config/fish ~/.config/fish.backup
 mv ~/.config/kitty ~/.config/kitty.backup
 mv ~/.config/starship.toml ~/.config/starship
+mv ~/.clojure ~/.clojure.backup
 ```
 
 ## References
@@ -93,3 +103,4 @@ mv ~/.config/starship.toml ~/.config/starship
 - **Fisher Plugin Manager**: [jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
 - **SDKMAN Repository**: [sdkman/sdkman-cli](https://github.com/sdkman/sdkman-cli)
 - **Fish Integration**: [reitzig/sdkman-for-fish](https://github.com/reitzig/sdkman-for-fish)
+- **Clojure CLI Configuration**: [practicalli/clojure-cli-config](https://github.com/practicalli/clojure-cli-config)
