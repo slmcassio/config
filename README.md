@@ -2,13 +2,28 @@
 
 ![Terminal Setup](assets/image.png)
 
-This repository contains terminal configurations optimized for development work, featuring Kitty terminal with theme switching, consistent color schemes, and fish shell integration.
+This repository contains terminal and editor configurations optimized for development, featuring Neovim (AstroNvim v5), Kitty with automatic theme switching, consistent color schemes, Fish shell integration, and Clojure CLI configuration.
 
 ## Installation
 
 Follow these steps in order to set up your terminal environment:
 
-### 1. Kitty Terminal
+### 1. Neovim
+
+**Install Neovim**:
+
+```bash
+brew install neovim
+```
+
+**Apply Neovim configuration**:
+
+```bash
+# Create symlink to entire folder to keep in sync
+ln -sf "$(pwd)/nvim" /Users/slm.cassio/.config/nvim
+```
+
+### 2. Kitty Terminal
 
 **Install Kitty**:
 
@@ -24,7 +39,7 @@ brew install --cask kitty
 ln -sf "$(pwd)/kitty" ~/.config/kitty
 ```
 
-### 2. Starship Prompt
+### 3. Starship Prompt
 
 **Install Starship**:
 
@@ -40,7 +55,7 @@ brew install starship
 ln -sf "$(pwd)/starship/starship.toml" ~/.config/starship.toml
 ```
 
-### 3. Zoxide
+### 4. Zoxide
 
 **Install Zoxide**
 
@@ -49,7 +64,7 @@ ln -sf "$(pwd)/starship/starship.toml" ~/.config/starship.toml
 brew install zoxide
 ```
 
-### 4. Fish Shell
+### 5. Fish Shell
 
 **Install Fish shell**:
 
@@ -65,7 +80,7 @@ brew install fish
 ln -sf "$(pwd)/fish" ~/.config/fish
 ```
 
-### 5. Fisher Plugin Manager
+### 6. Fisher Plugin Manager
 
 **Install Fisher**:
 
@@ -74,7 +89,7 @@ ln -sf "$(pwd)/fish" ~/.config/fish
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 ```
 
-### 6. SDKMAN
+### 7. SDKMAN
 
 **Install SDKMAN**:
 
@@ -86,7 +101,7 @@ curl -s "https://get.sdkman.io" | bash
 fisher install reitzig/sdkman-for-fish@v2.1.0
 ```
 
-### 7. Clojure CLI Configuration
+### 8. Clojure CLI Configuration
 
 **Install Clojure**:
 
@@ -116,11 +131,12 @@ mv ~/.clojure ~/.clojure.backup
 
 ## References
 
-- **Kitty Terminal**: [kovidgoyal/kitty](https://github.com/kovidgoyal/kitty)
-- **Starship Prompt**: [starship/starship](https://github.com/starship/starship)
-- **Zoxide**: [ajeetdsouza/zoxide](https://github.com/ajeetdsouza/zoxide)
-- **Fish Shell**: [fish-shell/fish-shell](https://github.com/fish-shell/fish-shell)
-- **Fisher Plugin Manager**: [jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
-- **SDKMAN Repository**: [sdkman/sdkman-cli](https://github.com/sdkman/sdkman-cli)
-- **Fish Integration**: [reitzig/sdkman-for-fish](https://github.com/reitzig/sdkman-for-fish)
-- **Clojure CLI Configuration**: [practicalli/clojure-cli-config](https://github.com/practicalli/clojure-cli-config)
+ - **Neovim (AstroNvim v5)**: [practicalli/nvim-astro5](https://github.com/practicalli/nvim-astro5)
+ - **Kitty Terminal**: [kovidgoyal/kitty](https://github.com/kovidgoyal/kitty)
+ - **Starship Prompt**: [starship/starship](https://github.com/starship/starship)
+ - **Zoxide**: [ajeetdsouza/zoxide](https://github.com/ajeetdsouza/zoxide)
+ - **Fish Shell**: [fish-shell/fish-shell](https://github.com/fish-shell/fish-shell)
+ - **Fisher Plugin Manager**: [jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
+ - **SDKMAN Repository**: [sdkman/sdkman-cli](https://github.com/sdkman/sdkman-cli)
+ - **Fish Integration**: [reitzig/sdkman-for-fish](https://github.com/reitzig/sdkman-for-fish)
+ - **Clojure CLI Configuration**: [practicalli/clojure-cli-config](https://github.com/practicalli/clojure-cli-config)
