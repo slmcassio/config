@@ -1,0 +1,31 @@
+{
+  "name": "practicalli-snippets",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "markdown",
+          "global",
+          "all"
+        ],
+        "comment": "snippets accross several languages",
+        "path": "./global.json"
+      },
+      {
+        "language": "clojure",
+        "path": "./clojure.json"
+      },
+      {
+        "language": "lua",
+        "path": "./lua.json"
+      },
+      {
+        "language": "markdown",
+        "path": "./markdown.json"
+      }
+    ]
+  }
+}
