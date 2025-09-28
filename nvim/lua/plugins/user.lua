@@ -136,17 +136,6 @@ return {
       mappings = { "clojure" },
     },
   },
-
-  -- Kitty scrollback integration
-  {
-    "mikesmithgh/kitty-scrollback.nvim",
-    lazy = true,
-    cmd = { "KittyScrollbackGenerateKittens", "KittyScrollbackCheckHealth" },
-    event = "VeryLazy",
-    config = function()
-      require("kitty-scrollback").setup()
-    end,
-  },
   -- ------------------------------------------
   -- Neovim Options and Key Mappings
   -- ------------------------------------------
@@ -208,7 +197,6 @@ return {
           ["<localLeader>tS"] = { "<cmd>OtherVSplit<cr>", desc = "Switch src & test (Split)" },
           -- Showkeys plugin (visualise key presses in Neovim window)
           ["<Leader>uk"] = { "<cmd>ShowkeysToggle<cr>", desc = "Toggle Showkeys" },
-
         },
         t = {
           -- terminal mode key bindings
@@ -217,7 +205,6 @@ return {
           -- visual mode key bindings
           -- Gist Creation
           ["<Leader>gj"] = { ":GistCreate ", desc = "Create Gist (region)" },
-          
         },
       },
     },
