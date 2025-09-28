@@ -1,8 +1,8 @@
 # Configuration
 
-![Terminal Setup](assets/image.png)
+![Terminal Setup](assets/image-2.png)
 
-This repository contains terminal and editor configurations optimized for development, featuring Neovim (AstroNvim v5), Kitty with automatic theme switching, consistent color schemes, Fish shell integration, and Clojure CLI configuration.
+This repository contains terminal and editor configurations optimized for development, featuring Neovim (AstroNvim v5), Ghostty with automatic theme switching, consistent color schemes, Fish shell integration, and Clojure configuration.
 
 ## Installation
 
@@ -23,20 +23,20 @@ brew install neovim
 ln -sf "$(pwd)/nvim" /Users/slm.cassio/.config/nvim
 ```
 
-### 2. Kitty Terminal
+### 2. Ghostty Terminal
 
-**Install Kitty**:
+**Install Ghostty**:
 
 ```bash
-# The fast, feature-rich, GPU based terminal emulator
-brew install --cask kitty
+# Fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration
+brew install --cask ghostty
 ```
 
-**Apply Kitty configuration**:
+**Apply Ghostty configuration**:
 
 ```bash
 # Create symlink to entire folder to keep in sync
-ln -sf "$(pwd)/kitty" ~/.config/kitty
+ln -sf "$(pwd)/ghostty" ~/.config/ghostty
 ```
 
 ### 3. Starship Prompt
@@ -127,8 +127,8 @@ ln -sf "$(pwd)/clojure" ~/.clojure
 # Fish
 mv ~/.config/fish ~/.config/fish.backup
 
-# Kitty
-mv ~/.config/kitty ~/.config/kitty.backup
+# Ghostty
+mv ~/.config/ghostty ~/.config/ghostty.backup
 
 # Starship
 mv ~/.config/starship.toml ~/.config/starship.toml.backup
@@ -146,7 +146,7 @@ mv ~/.cache/nvim ~/.cache/nvim.backup
 ## References
 
 - **Neovim (AstroNvim v5)**: [practicalli/nvim-astro5](https://github.com/practicalli/nvim-astro5)
-- **Kitty Terminal**: [kovidgoyal/kitty](https://github.com/kovidgoyal/kitty)
+- **Ghostty Terminal**: [ghostty-org/ghostty](https://github.com/ghostty-org/ghostty)
 - **Starship Prompt**: [starship/starship](https://github.com/starship/starship)
 - **Zoxide**: [ajeetdsouza/zoxide](https://github.com/ajeetdsouza/zoxide)
 - **Fish Shell**: [fish-shell/fish-shell](https://github.com/fish-shell/fish-shell)
