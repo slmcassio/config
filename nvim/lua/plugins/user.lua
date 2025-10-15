@@ -1,6 +1,6 @@
 -- ------------------------------------------
 -- Preferences
---
+-- ------------------------------------------
 -- which-key menu vertical orientation
 -- catppuccin colorscheme
 -- Show key presses in popup (SPC u k)
@@ -15,21 +15,14 @@
 -- Neovim global options & key mappings
 -- ------------------------------------------
 
--- INFO: Create your own preferences in `lua/plugins/your-name.lua`
-
--- INFO: Files under `lua/plugins/*.lua` load in alphabetical order,
--- so plugin overrides should be the last file to load
-
--- INFO: Config in this file skipped if `SLMCASSIO_ASTRO` environment variable set to false
-local user_slmcassio = vim.env.SLMCASSIO_ASTRO
-if user_slmcassio == "false" then return {} end
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 ---@type LazySpec
 return {
 
   -- ------------------------------------------
   -- UI Customisation
-
+  -- ------------------------------------------
   -- Vertical which-key menu
   {
     "folke/which-key.nvim",
@@ -86,10 +79,8 @@ return {
           }, "\n"),
         },
       },
-
       -- indent guides - disable by default
       indent = { enabled = true },
-
       notifier = {
         -- log level: TRACE DEBUG ERROR WARN INFO  OFF
         level = vim.log.levels.WARN,
@@ -99,10 +90,8 @@ return {
     },
   },
   -- ------------------------------------------
-
-  -- ------------------------------------------
   -- Editor tools
-
+  -- ------------------------------------------
   -- Alternative to Esc key using `fd` key mapping
   {
     "max397574/better-escape.nvim",
@@ -148,9 +137,8 @@ return {
     },
   },
   -- ------------------------------------------
-
-  -- ------------------------------------------
   -- Neovim Options and Key Mappings
+  -- ------------------------------------------
   {
     "AstroNvim/astrocore",
     ---@type AstroCoreOpts
@@ -160,34 +148,24 @@ return {
         opt = {
           spell = true, -- sets vim.opt.spell
           wrap = true, -- sets vim.opt.wrap
-          guifont = "JetBrainsMono Nerd Font Mono:h13", -- JetBrains Mono Nerd Font (recommended size: 13 by JetBrains)
+          guifont = "JetBrainsMono Nerd Font Mono:h13",
         },
         -- configure global vim variables: vim.g
         g = {
           -- Neovim language provides - disable language integration not required
           loaded_perl_provider = 0,
           loaded_ruby_provider = 0,
-
           -- Leader key for Visual-Multi Cursors (Multiple Cursors)
           VM_leader = "gm", -- Visual Multi Leader (multiple cursors - user plugin)
-
           -- Conjure plugin overrides
-          -- comment pattern for eval to comment command
-          ["conjure#eval#comment_prefix"] = ";; ",
-          -- Hightlight evaluated forms
-          ["conjure#highlight#enabled"] = true,
-
-          -- show HUD REPL log at startup
-          ["conjure#log#hud#enabled"] = false,
-
-          -- auto repl (babashka)
-          ["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = false,
+          ["conjure#eval#comment_prefix"] = ";; ", -- comment pattern for eval to comment command
+          ["conjure#highlight#enabled"] = true, -- Hightlight evaluated forms
+          ["conjure#log#hud#enabled"] = false, -- show HUD REPL log at startup
+          ["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = false, -- auto repl (babashka)
           ["conjure#client#clojure#nrepl#connection#auto_repl#hidden"] = true,
           ["conjure#client#clojure#nrepl#connection#auto_repl#cmd"] = nil,
           ["conjure#client#clojure#nrepl#eval#auto_require"] = false,
-
-          -- Test runner: "clojure", "clojuresCRipt", "kaocha"
-          ["conjure#client#clojure#nrepl#test#runner"] = "kaocha",
+          ["conjure#client#clojure#nrepl#test#runner"] = "kaocha", -- Test runner: "clojure", "clojuresCRipt", "kaocha"
 
           -- Troubleshoot: Minimise very long lines slow down:
           -- ["conjure#log#treesitter"] = false
@@ -200,34 +178,23 @@ return {
           -- normal mode key bindings
           -- setting a mapping to false will disable it
           -- ["<esc>"] = false,
-
-          -- whick-key sub-menu for Visual-Multi Cursors (Multiple Cursors)
-          ["gm"] = { name = "Multiple Cursors" },
-
-          -- Toggle last open buffer
-          ["<Leader><tab>"] = { "<cmd>b#<cr>", desc = "Previous tab" },
-
+          ["gm"] = { name = "Multiple Cursors" }, -- whick-key sub-menu for Visual-Multi Cursors (Multiple Cursors)
+          ["<Leader><tab>"] = { "<cmd>b#<cr>", desc = "Previous tab" }, -- Toggle last open buffer
           -- navigate buffer tabs
           ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
           ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
-
           -- snacks file explorer
           ["<Leader>E"] = { "<cmd>lua Snacks.picker.explorer()<cr>", desc = "Snacks Explorer" },
-
           -- Save prompting for file name
           ["<Leader>W"] = { ":write ", desc = "Save as file" },
-
           -- Gist Creation
           ["<Leader>gj"] = { ":GistCreateFromFile ", desc = "Create Gist (file)" },
           ["<Leader>gJ"] = { "<cmd>GistsList<cr>", desc = "List Gist" },
-
           -- Neogit Status float
           ["<Leader>gf"] = { "<cmd>Neogit kind=floating<cr>", desc = "Git Status (floating)" },
-
           -- Toggle between src and test (Clojure pack | other-nvim)
           ["<localLeader>ts"] = { "<cmd>Other<cr>", desc = "Switch src & test" },
           ["<localLeader>tS"] = { "<cmd>OtherVSplit<cr>", desc = "Switch src & test (Split)" },
-
           -- Showkeys plugin (visualise key presses in Neovim window)
           ["<Leader>uk"] = { "<cmd>ShowkeysToggle<cr>", desc = "Toggle Showkeys" },
         },

@@ -1,15 +1,11 @@
--- ---------------------------------------------------------
+-- ------------------------------------------
 -- Configure format & lint tools
---
+-- ------------------------------------------
 -- Ensure tools are installed via Mason
 -- Pass configuration files to each tool
--- ---------------------------------------------------------
+-- ------------------------------------------
 
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- INFO: Config in this file skipped if `PRACTICALLI_NONELS_CONFIG` environment variable is not set to true
-local nonels_config = vim.env.PRACTICALLI_NONELS_CONFIG
-if nonels_config ~= "true" then return {} end
+-- if true then return {} end -- INFO: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 ---@type LazySpec
 return {
@@ -25,10 +21,9 @@ return {
         -- add more arguments for adding more null-ls sources
       })
       opts.handlers = {
-        markdownlint = function(source_name, methods)
+        markdownlint = function(_source_name, _methods)
           local null_ls = require "null-ls"
           null_ls.register(null_ls.builtins.diagnostics.markdownlint.with {
-            -- extra_args = { "--config", "~/.config/markdownlint.yaml" },
             extra_args = { "--config", "~/.config/markdown-lint.jsonc" },
           })
         end,
