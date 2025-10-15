@@ -1,18 +1,14 @@
 -- ------------------------------------------
 -- Termux (Android) Overrides
---
+-- ------------------------------------------
 -- Use local LSP language servers as mason fails to install
 -- Clojure LSP server
 -- Lua Language server
 -- ------------------------------------------
 
--- ------------------------------------------
--- INFO: conditional loads if `OS_TERMUX` is true
 local termux = vim.env.OS_TERMUX
-if not termux then return {} end
--- ------------------------------------------
+if not termux then return {} end -- INFO: conditional loads if `OS_TERMUX` is true
 
--- ------------------------------------------
 ---@type LazySpec
 return {
   {
@@ -50,4 +46,3 @@ return {
     },
   },
 }
--- ------------------------------------------
