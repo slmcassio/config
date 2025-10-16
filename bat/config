@@ -1,0 +1,11 @@
+# Set theme to Catppuccin Mocha
+--theme="Catppuccin Mocha"
+
+# Show line numbers
+--style="numbers,changes"
+
+# Use italic text on the terminal
+--italic-text=always
+
+# Use pager automatically for long output
+--paging=auto

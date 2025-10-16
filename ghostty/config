@@ -23,6 +23,12 @@ window-padding-x = 10
 window-padding-y = 10
 
 #-----------------------------------------------
+# Fullscreen
+#-----------------------------------------------
+fullscreen = true
+macos-non-native-fullscreen = false
+
+#-----------------------------------------------
 # Theme
 #-----------------------------------------------
 theme = light:Catppuccin Latte,dark:Catppuccin Mocha
