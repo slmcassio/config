@@ -55,7 +55,60 @@ brew install starship
 ln -sf "$(pwd)/starship/starship.toml" ~/.config/starship.toml
 ```
 
-### 4. Zoxide
+### 4. Eza
+
+**Install Eza**:
+
+```bash
+# A modern alternative to ls
+brew install eza
+```
+
+**Apply Eza configuration**:
+
+```bash
+# Create symlink to config file to keep in sync
+ln -sf "$(pwd)/eza" ~/.config/eza
+```
+
+### 5. Bat
+
+**Install Bat**:
+
+```bash
+# A cat clone with syntax highlighting and Git integration
+brew install bat
+```
+
+**Apply Bat configuration**:
+
+```bash
+# Create symlink to entire folder to keep in sync
+ln -sf "$(pwd)/bat" ~/.config/bat
+
+# Build bat cache to activate the theme
+bat cache --build
+```
+
+### 6. FZF (Fuzzy Finder)
+
+**Install FZF**:
+
+```bash
+# A command-line fuzzy finder
+brew install fzf
+```
+
+### 7. fd
+
+**Install fd**:
+
+```bash
+# A simple, fast and user-friendly alternative to 'find'
+brew install fd
+```
+
+### 8. Zoxide
 
 **Install Zoxide**:
 
@@ -64,7 +117,7 @@ ln -sf "$(pwd)/starship/starship.toml" ~/.config/starship.toml
 brew install zoxide
 ```
 
-### 5. Fish Shell
+### 9. Fish Shell
 
 **Install Fish shell**:
 
@@ -80,7 +133,18 @@ brew install fish
 ln -sf "$(pwd)/fish" ~/.config/fish
 ```
 
-### 6. Fisher Plugin Manager
+**Configuration includes**:
+- Morning routine function for system updates
+- Enhanced aliases for common commands (ls, cp, mv, mkdir)
+- Development shortcuts (dev, Dev directories)
+- Clojure REPL shortcuts
+- System utilities (DNS flush, IP address tools)
+- Memory and CPU usage monitoring
+- Git color configuration
+- GPG and SSH agent setup
+- Integration with Starship prompt and Zoxide
+
+### 10. Fisher Plugin Manager
 
 **Install Fisher**:
 
@@ -89,7 +153,7 @@ ln -sf "$(pwd)/fish" ~/.config/fish
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 ```
 
-### 7. SDKMAN
+### 11. SDKMAN
 
 **Install SDKMAN**:
 
@@ -101,7 +165,7 @@ curl -s "https://get.sdkman.io" | bash
 fisher install reitzig/sdkman-for-fish@v2.1.0
 ```
 
-### 8. Clojure Configuration
+### 12. Clojure Configuration
 
 **Install Clojure**:
 
@@ -133,6 +197,9 @@ mv ~/.config/ghostty ~/.config/ghostty.backup
 # Starship
 mv ~/.config/starship.toml ~/.config/starship.toml.backup
 
+# Bat
+mv ~/.config/bat ~/.config/bat.backup
+
 # Clojure
 mv ~/.clojure ~/.clojure.backup
 
@@ -148,6 +215,8 @@ mv ~/.cache/nvim ~/.cache/nvim.backup
 - **Neovim (AstroNvim v5)**: [practicalli/nvim-astro5](https://github.com/practicalli/nvim-astro5)
 - **Ghostty Terminal**: [ghostty-org/ghostty](https://github.com/ghostty-org/ghostty)
 - **Starship Prompt**: [starship/starship](https://github.com/starship/starship)
+- **Eza**: [eza-community/eza](https://github.com/eza-community/eza)
+- **Bat**: [sharkdp/bat](https://github.com/sharkdp/bat)
 - **Zoxide**: [ajeetdsouza/zoxide](https://github.com/ajeetdsouza/zoxide)
 - **Fish Shell**: [fish-shell/fish-shell](https://github.com/fish-shell/fish-shell)
 - **Fisher Plugin Manager**: [jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)

@@ -16,17 +16,21 @@ fish_add_path $HOME/.local/bin
 # ------------------------------------------------------------
 # ALIASES AND FUNCTIONS
 # ------------------------------------------------------------
-alias ls 'ls -la'
-alias cp 'cp -iv'                           # Preferred 'cp' implementation
-alias mv 'mv -iv'                           # Preferred 'mv' implementation
-alias mkdir 'mkdir -pv'                     # Preferred 'mkdir' implementation
-
-alias dev 'cd ~/dev'
-alias Dev 'cd ~/Developer'
-
-alias f 'open -a Finder ./'                 # f:            Opens current directory in MacOS Finder
-alias c 'clear'                             # c:            Clear terminal display
-alias path 'echo $PATH | tr ":" "\n"'       # path:         Echo all executable Paths
+function e --description 'List files using eza'
+    eza -la --icons --header --hyperlink --git-repos-no-status --git --git-ignore --ignore-glob=.git $argv
+end
+function cp --description 'Copy files verbosely'
+    command cp -v $argv
+end
+function mv --description 'Move files verbosely'
+    command mv -v $argv
+end
+function mkdir --description 'Make directories with parents'
+    command mkdir -pv $argv
+end
+alias f 'open -a Finder ./'             # Opens current directory in MacOS Finder
+alias c 'clear'                         # Clear terminal display
+alias path 'echo $PATH | tr ":" "\n"'   # Echo all executable Paths
 # ------------------------------------------------------------
 # CLOJURE REPL SHORTCUTS
 # ------------------------------------------------------------
@@ -67,6 +71,10 @@ alias pscpu10 'ps aux | sort -nr -k 3 | head -10'
 set -x PATH /opt/homebrew/bin $PATH
 set -x PATH /opt/homebrew/sbin $PATH
 # ------------------------------------------------------------
+# EZA
+# ------------------------------------------------------------
+set -x EZA_CONFIG_DIR $HOME/.config/eza
+# ------------------------------------------------------------
 # GIT
 # ------------------------------------------------------------
 git config --global color.diff auto
@@ -80,9 +88,58 @@ set -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 gpg-connect-agent updatestartuptty /bye > /dev/null
 # ------------------------------------------------------------
+# FZF
+# ------------------------------------------------------------
+# Uses 'fd' (fast find alternative) + preview
+set -gx FZF_DEFAULT_COMMAND "fd --hidden --strip-cwd-prefix --exclude .git"
+# Default options with your color scheme
+set -gx FZF_DEFAULT_OPTS "
+  --preview 'if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat --color=always -n --line-range :500 {}; fi'
+  --height 75%
+  --layout=reverse
+  --border
+  --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
+  --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
+  --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+# Override preview for Ctrl+R history search (disable preview for command history)
+set -gx FZF_CTRL_R_OPTS "--no-preview"
+# ------------------------------------------------------------
+# ZOXIDE
+# ------------------------------------------------------------
+set -gx _ZO_FZF_OPTS "
+  --preview 'eza --tree --color=always {2..} | head -200'
+  --height 75%
+  --layout=reverse
+  --border
+  --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
+  --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
+  --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8"
+# ------------------------------------------------------------
+# ABBREVIATIONS
+# ------------------------------------------------------------
+if status is-interactive
+    # GIT
+    abbr -a g git
+    abbr -a gs git status
+    abbr -a ga git add
+    abbr -a gc git commit
+    abbr -a gp git push
+    abbr -a gl git pull
+    abbr -a gd git diff
+    abbr -a gco git checkout
+    abbr -a gb git branch
+    abbr -a grb git rebase
+    abbr -a grs git reset
+    abbr -a grt git restore
+    abbr -a glog git log --oneline --graph --decorate
+    # FZF
+    abbr -a ff fzf
+end
+# ------------------------------------------------------------
 # STARSHIP & ZOXIDE
 # ------------------------------------------------------------
 if status is-interactive
-  zoxide init fish | source
   starship init fish | source
+  zoxide init fish | source
+  fzf --fish | source
 end
