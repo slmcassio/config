@@ -1,12 +1,8 @@
--- Clojure specific configuration
--- Loads after clojure filetype set
-
 local whichkey = require "which-key"
 
 return {
   {
     "folke/which-key.nvim",
-    -- Define Conjure Groups only for Clojure filetypes
     whichkey.add {
       -- Conjure sub-menus
       { "<LocalLeader>c", group = "Connect" },
