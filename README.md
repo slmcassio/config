@@ -51,8 +51,8 @@ brew install starship
 **Apply Starship configuration**:
 
 ```bash
-# Create symlink to config file to keep in sync
-ln -sf "$(pwd)/starship/starship.toml" ~/.config/starship.toml
+# Create symlink to entire folder to keep in sync
+ln -sf "$(pwd)/starship" ~/.config/starship
 ```
 
 ### 4. Eza
@@ -99,6 +99,13 @@ bat cache --build
 brew install fzf
 ```
 
+**Apply FZF configuration**:
+
+```bash
+# Create symlink to entire folder to keep in sync
+ln -sf "$(pwd)/fzf" ~/.config/fzf
+```
+
 ### 7. fd
 
 **Install fd**:
@@ -140,9 +147,17 @@ ln -sf "$(pwd)/fish" ~/.config/fish
 - Clojure REPL shortcuts
 - System utilities (DNS flush, IP address tools)
 - Memory and CPU usage monitoring
-- Git color configuration
 - GPG and SSH agent setup
 - Integration with Starship prompt and Zoxide
+
+**One-time Git setup** (run these commands once):
+
+```bash
+# Enable colored output for Git commands
+git config --global color.diff auto
+git config --global color.status auto
+git config --global color.branch auto
+```
 
 ### 10. Fisher Plugin Manager
 
