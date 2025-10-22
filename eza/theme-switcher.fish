@@ -9,13 +9,8 @@ function set_eza_theme
     set -l config_dir (dirname (status --current-filename))
 
     if test "$appearance" = "Dark"
-        # Copy Catppuccin Mocha (dark theme)
         cp "$config_dir/eza-catppuccin-mocha-pink.yml" "$config_dir/theme.yml"
     else
-        # Copy Catppuccin Latte (light theme)
         cp "$config_dir/eza-catppuccin-latte-pink.yml" "$config_dir/theme.yml"
     end
 end
-
-# Load theme on shell startup
-set_eza_theme

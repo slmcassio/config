@@ -12,8 +12,10 @@ fish/fish_history
 fish/.fish_history
 fish/fish_variables
 fish/completions/
-fish/conf.d/
-fish/functions/
+fish/conf.d/sdk.fish
+fish/functions/fisher.fish
+fish/functions/sdk.fish
+fish/functions/__sdkman-noexport-init.sh
 
 # Clojure
 clojure/.cpcache/*
