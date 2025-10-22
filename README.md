@@ -6,107 +6,51 @@ This repository contains terminal and editor configurations optimized for develo
 
 ## Installation
 
-Follow these steps in order to set up your terminal environment:
+Follow these steps in order to set up your terminal environment. **Note**: Before starting, see [Backup Existing Configuration](#backup-existing-configuration) to preserve your current setup.
 
-### 1. Neovim
+### Terminal
 
-**Install Neovim**:
+The foundation of your development environment.
 
-```bash
-brew install neovim
-```
-
-**Apply Neovim configuration**:
-
-```bash
-# Create symlink to entire folder to keep in sync
-ln -sf "$(pwd)/nvim" /Users/slm.cassio/.config/nvim
-```
-
-### 2. Ghostty Terminal
+#### 1. Ghostty Terminal
 
 **Install Ghostty**:
 
 ```bash
 # Fast, feature-rich, and cross-platform terminal emulator that uses platform-native UI and GPU acceleration
 brew install --cask ghostty
-```
 
-**Apply Ghostty configuration**:
-
-```bash
 # Create symlink to entire folder to keep in sync
 ln -sf "$(pwd)/ghostty" ~/.config/ghostty
 ```
 
-### 3. Starship Prompt
+### CLI Tools
 
-**Install Starship**:
+Shell enhancements for productivity and aesthetics. Install these before Fish shell so they're available in Fish functions and configs.
 
-```bash
-# The minimal, blazing-fast, and infinitely customizable prompt for any shell
-brew install starship
-```
+#### 2. Navigation & Search Tools
 
-**Apply Starship configuration**:
-
-```bash
-# Create symlink to entire folder to keep in sync
-ln -sf "$(pwd)/starship" ~/.config/starship
-```
-
-### 4. Eza
+These tools work together to provide modern file navigation, fuzzy finding, and smart directory jumping.
 
 **Install Eza**:
 
 ```bash
-# A modern alternative to ls
+# A modern alternative to ls with icons and git integration
 brew install eza
-```
 
-**Apply Eza configuration**:
-
-```bash
 # Create symlink to config file to keep in sync
 ln -sf "$(pwd)/eza" ~/.config/eza
 ```
-
-### 5. Bat
-
-**Install Bat**:
-
-```bash
-# A cat clone with syntax highlighting and Git integration
-brew install bat
-```
-
-**Apply Bat configuration**:
-
-```bash
-# Create symlink to entire folder to keep in sync
-ln -sf "$(pwd)/bat" ~/.config/bat
-
-# Build bat cache to activate the theme
-bat cache --build
-```
-
-### 6. FZF (Fuzzy Finder)
 
 **Install FZF**:
 
 ```bash
 # A command-line fuzzy finder
 brew install fzf
-```
 
-**Apply FZF configuration**:
-
-```bash
 # Create symlink to entire folder to keep in sync
 ln -sf "$(pwd)/fzf" ~/.config/fzf
 ```
-
-### 7. fd
 
 **Install fd**:
 
@@ -115,40 +59,122 @@ ln -sf "$(pwd)/fzf" ~/.config/fzf
 brew install fd
 ```
 
-### 8. Zoxide
-
 **Install Zoxide**:
 
 ```bash
-# Zoxide is a smarter cd command, inspired by z and autojump.
+# A smarter cd command that learns your habits
 brew install zoxide
 ```
 
-### 9. Fish Shell
+#### 3. Bat
+
+**Install Bat**:
+
+```bash
+# A cat clone with syntax highlighting and Git integration
+brew install bat
+
+# Create symlink to entire folder to keep in sync
+ln -sf "$(pwd)/bat" ~/.config/bat
+
+# Build bat cache to activate the theme
+bat cache --build
+```
+
+#### 4. ripgrep
+
+**Install ripgrep**:
+
+```bash
+# A line-oriented search tool that recursively searches directories for a regex pattern
+brew install ripgrep
+```
+
+### Shell & Prompt
+
+The shell and prompt that leverage the CLI tools installed above.
+
+#### 5. Fish Shell
 
 **Install Fish shell**:
 
 ```bash
 # Fish is a smart and user-friendly command line shell.
 brew install fish
-```
 
-**Apply Fish configuration**:
-
-```bash
 # Create symlink to entire folder to keep in sync
 ln -sf "$(pwd)/fish" ~/.config/fish
 ```
 
 **Configuration includes**:
+- Modular configuration using numbered `conf.d/` files for load ordering
+- Environment variables (`$EDITOR`, `$VISUAL`) configured in `10-env.fish`
 - Morning routine function for system updates
-- Enhanced aliases for common commands (ls, cp, mv, mkdir)
-- Development shortcuts (dev, Dev directories)
-- Clojure REPL shortcuts
+- Comprehensive abbreviations for productivity
 - System utilities (DNS flush, IP address tools)
 - Memory and CPU usage monitoring
 - GPG and SSH agent setup
+- Automatic theme switching (Catppuccin light/dark)
 - Integration with Starship prompt and Zoxide
+
+#### conf.d/ Architecture
+
+Configuration files are loaded in numbered order:
+- `00-paths.fish` - PATH setup (uses `fish_add_path` for deduplication)
+- `10-env.fish` - Environment variables
+- `20-history.fish` - Shell history behavior
+- `30-*.fish` - Tool configurations (eza, fzf, zoxide)
+- `40-gpg.fish` - GPG/SSH agent setup
+- `50-starship.fish` - Prompt configuration
+- `60-sdk.fish` - SDKMAN integration
+- `90-themes.fish` - Theme switching (loaded last)
+
+#### Custom Functions & Features
+
+**Navigation & Search:**
+- `e` - Enhanced directory listing (eza with icons, git status, and hyperlinks)
+- `f` - Fuzzy find files and directories
+- `fe` - Fuzzy find and edit file in `$EDITOR`
+- `ff` - Fuzzy find directory and open in Finder
+- `fz` - Fuzzy find directory and jump with zoxide
+- `fkill` - Fuzzy find and kill process
+
+**Git Abbreviations:**
+- `g` → `git`
+- `gs` → `git status`
+- `ga` → `git add`
+- `gaa` → `git add .`
+- `gc` → `git commit`
+- `gca` → `git commit --amend`
+- `gps` → `git push`
+- `gpl` → `git pull`
+- `gd` → `git diff`
+- `gdh` → `git diff HEAD`
+- `gco` → `git checkout`
+- `gb` → `git branch`
+- `grb` → `git rebase`
+- `grs` → `git reset`
+- `grt` → `git restore`
+- `gst` → `git stash`
+- `glog` → `git log --oneline --graph --decorate`
+
+**Utilities:**
+- `morning` - Update Homebrew
+- `uuid` - Generate UUID and copy to clipboard
+- `flushdns` - Flush DNS cache
+- `running_services` - List running services
+- `whatismyipaddress` - Get public IP address
+- `localip` - Get local IP address
+- `sha1` - Calculate SHA1 hash
+- `md5sum` - Calculate MD5 hash
+- `psmem` / `psmem10` - Sort processes by memory usage
+- `pscpu` / `pscpu10` - Sort processes by CPU usage
+
+**Theme System:**
+The configuration features unified automatic theme switching based on macOS appearance:
+- **FZF**: Catppuccin Mocha (dark) / Latte (light) with custom previews
+- **EZA**: Catppuccin color schemes with pink accents
+- **Modular design**: Separate base options from color themes for easy customization
 
 **One-time Git setup** (run these commands once):
 
@@ -159,7 +185,19 @@ git config --global color.status auto
 git config --global color.branch auto
 ```
 
-### 10. Fisher Plugin Manager
+#### 6. Starship Prompt
+
+**Install Starship**:
+
+```bash
+# The minimal, blazing-fast, and infinitely customizable prompt for any shell
+brew install starship
+
+# Create symlink to entire folder to keep in sync
+ln -sf "$(pwd)/starship" ~/.config/starship
+```
+
+#### 7. Fisher Plugin Manager
 
 **Install Fisher**:
 
@@ -168,7 +206,11 @@ git config --global color.branch auto
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 ```
 
-### 11. SDKMAN
+### Development Environment
+
+Language and SDK management tools.
+
+#### 8. SDKMAN
 
 **Install SDKMAN**:
 
@@ -180,21 +222,34 @@ curl -s "https://get.sdkman.io" | bash
 fisher install reitzig/sdkman-for-fish@v2.1.0
 ```
 
-### 12. Clojure Configuration
+#### 9. Clojure
 
 **Install Clojure**:
 
 ```bash
 # Clojure is a dynamic, general-purpose programming language
 brew install clojure
-```
 
-**Apply Clojure configuration**:
-
-```bash
 # Create symlink to entire folder to keep in sync
 ln -sf "$(pwd)/clojure" ~/.clojure
 ```
+
+### Code Editor
+
+The editor that leverages all the tools installed above.
+
+#### 10. Neovim
+
+**Install Neovim**:
+
+```bash
+brew install neovim
+
+# Create symlink to entire folder to keep in sync
+ln -sf "$(pwd)/nvim" ~/.config/nvim
+```
+
+**Note**: Neovim is installed last because it leverages many of the tools installed in previous steps (bat for syntax highlighting, fzf for fuzzy finding, fd for file searching, ripgrep for code search, etc.).
 
 ## Backup Existing Configuration
 
@@ -203,17 +258,23 @@ ln -sf "$(pwd)/clojure" ~/.clojure
 ```bash
 # Backup existing configurations (rename to .backup to preserve)
 
-# Fish
-mv ~/.config/fish ~/.config/fish.backup
-
 # Ghostty
 mv ~/.config/ghostty ~/.config/ghostty.backup
 
-# Starship
-mv ~/.config/starship.toml ~/.config/starship.toml.backup
+# Eza
+mv ~/.config/eza ~/.config/eza.backup
 
 # Bat
 mv ~/.config/bat ~/.config/bat.backup
+
+# FZF
+mv ~/.config/fzf ~/.config/fzf.backup
+
+# Fish
+mv ~/.config/fish ~/.config/fish.backup
+
+# Starship
+mv ~/.config/starship ~/.config/starship.backup
 
 # Clojure
 mv ~/.clojure ~/.clojure.backup
@@ -227,14 +288,18 @@ mv ~/.cache/nvim ~/.cache/nvim.backup
 
 ## References
 
-- **Neovim (AstroNvim v5)**: [practicalli/nvim-astro5](https://github.com/practicalli/nvim-astro5)
 - **Ghostty Terminal**: [ghostty-org/ghostty](https://github.com/ghostty-org/ghostty)
-- **Starship Prompt**: [starship/starship](https://github.com/starship/starship)
 - **Eza**: [eza-community/eza](https://github.com/eza-community/eza)
 - **Bat**: [sharkdp/bat](https://github.com/sharkdp/bat)
+- **FZF**: [junegunn/fzf](https://github.com/junegunn/fzf)
+- **fd**: [sharkdp/fd](https://github.com/sharkdp/fd)
+- **ripgrep**: [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
 - **Zoxide**: [ajeetdsouza/zoxide](https://github.com/ajeetdsouza/zoxide)
 - **Fish Shell**: [fish-shell/fish-shell](https://github.com/fish-shell/fish-shell)
+- **Starship Prompt**: [starship/starship](https://github.com/starship/starship)
 - **Fisher Plugin Manager**: [jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
-- **SDKMAN Repository**: [sdkman/sdkman-cli](https://github.com/sdkman/sdkman-cli)
-- **Fish Integration**: [reitzig/sdkman-for-fish](https://github.com/reitzig/sdkman-for-fish)
+- **SDKMAN**: [sdkman/sdkman-cli](https://github.com/sdkman/sdkman-cli)
+- **SDKMAN for Fish**: [reitzig/sdkman-for-fish](https://github.com/reitzig/sdkman-for-fish)
 - **Clojure Configuration**: [practicalli/clojure-cli-config](https://github.com/practicalli/clojure-cli-config)
+- **Neovim (AstroNvim v5)**: [practicalli/nvim-astro5](https://github.com/practicalli/nvim-astro5)
+- **Catppuccin Theme**: [catppuccin/catppuccin](https://github.com/catppuccin/catppuccin)
