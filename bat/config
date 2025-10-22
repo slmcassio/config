@@ -1,5 +1,7 @@
-# Set theme to Catppuccin Mocha
---theme="Catppuccin Mocha"
+# Set theme
+--theme=auto:system
+--theme-light="Catppuccin Latte"
+--theme-dark="Catppuccin Mocha"
 
 # Show line numbers
 --style="numbers,changes"
