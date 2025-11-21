@@ -1,0 +1,32 @@
+{
+  "breadcrumbs.enabled": false,
+  "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": false,
+  "editor.gotoLocation.alternativeDeclarationCommand": "",
+  "editor.gotoLocation.alternativeDefinitionCommand": "",
+  "editor.gotoLocation.alternativeTypeDefinitionCommand": "",
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "git.path": "/usr/bin/git",
+  "vim.enableNeovim": true,
+  "vim.handleKeys": {
+    "<C-n>": false
+  },
+  "vim.highlightedyank.duration": 700,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.textColor": "#45475a",
+  "vim.neovimPath": "/opt/homebrew/bin/nvim",
+  "window.autoDetectColorScheme": true,
+  "workbench.activityBar.location": "top",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+  "workbench.preferredLightColorTheme": "Catppuccin Latte",
+  "window.commandCenter": true,
+  "projectManager.git.baseFolders": [
+    "/Users/slm.cassio/Developer"
+  ],
+  "python.languageServer": "Default"
+}
