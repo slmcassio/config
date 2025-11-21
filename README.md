@@ -236,9 +236,11 @@ ln -sf "$(pwd)/clojure" ~/.clojure
 
 ### Code Editor
 
-The editor that leverages all the tools installed above.
+Choose the preferred option: Neovim or Antigravity/Cursor.
 
 #### 10. Neovim
+
+This editor that leverages all the tools installed above.
 
 **Install Neovim**:
 
@@ -249,7 +251,35 @@ brew install neovim
 ln -sf "$(pwd)/nvim" ~/.config/nvim
 ```
 
-**Note**: Neovim is installed last because it leverages many of the tools installed in previous steps (bat for syntax highlighting, fzf for fuzzy finding, fd for file searching, ripgrep for code search, etc.).
+Note**: Neovim is installed last because it leverages many of the tools installed in previous steps (bat for syntax highlighting, fzf for fuzzy finding, fd for file searching, ripgrep for code search, etc.).
+
+#### 11. VSCode Based Editors (Antigravity, Cursor)
+
+**Install Antigravity**:
+
+```bash
+brew install --cask antigravity
+
+# Symlink configuration files
+ln -sf "$(pwd)/vscode/keybindings.json" ~/Library/Application\ Support/Antigravity/User/keybindings.json
+ln -sf "$(pwd)/vscode/settings.json" ~/Library/Application\ Support/Antigravity/User/settings.json
+
+# Install extensions
+cat vscode/extension-list | xargs -I {} agy --install-extension {}
+```
+
+**Install Cursor**:
+
+```bash
+brew install --cask cursor
+
+# Symlink configuration files
+ln -sf "$(pwd)/vscode/keybindings.json" ~/Library/Application\ Support/Cursor/User/keybindings.json
+ln -sf "$(pwd)/vscode/settings.json" ~/Library/Application\ Support/Cursor/User/settings.json
+
+# Install extensions
+cat vscode/extension-list | xargs -I {} cursor --install-extension {}
+```
 
 ## Backup Existing Configuration
 
@@ -290,11 +320,11 @@ mv ~/.cache/nvim ~/.cache/nvim.backup
 
 - **Ghostty Terminal**: [ghostty-org/ghostty](https://github.com/ghostty-org/ghostty)
 - **Eza**: [eza-community/eza](https://github.com/eza-community/eza)
-- **Bat**: [sharkdp/bat](https://github.com/sharkdp/bat)
 - **FZF**: [junegunn/fzf](https://github.com/junegunn/fzf)
 - **fd**: [sharkdp/fd](https://github.com/sharkdp/fd)
-- **ripgrep**: [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
 - **Zoxide**: [ajeetdsouza/zoxide](https://github.com/ajeetdsouza/zoxide)
+- **Bat**: [sharkdp/bat](https://github.com/sharkdp/bat)
+- **ripgrep**: [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep)
 - **Fish Shell**: [fish-shell/fish-shell](https://github.com/fish-shell/fish-shell)
 - **Starship Prompt**: [starship/starship](https://github.com/starship/starship)
 - **Fisher Plugin Manager**: [jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
@@ -302,4 +332,6 @@ mv ~/.cache/nvim ~/.cache/nvim.backup
 - **SDKMAN for Fish**: [reitzig/sdkman-for-fish](https://github.com/reitzig/sdkman-for-fish)
 - **Clojure Configuration**: [practicalli/clojure-cli-config](https://github.com/practicalli/clojure-cli-config)
 - **Neovim (AstroNvim v5)**: [practicalli/nvim-astro5](https://github.com/practicalli/nvim-astro5)
+- **Antigravity**: [antigravity.google](https://antigravity.google)
+- **Cursor**: [cursor.com](https://cursor.com)
 - **Catppuccin Theme**: [catppuccin/catppuccin](https://github.com/catppuccin/catppuccin)
