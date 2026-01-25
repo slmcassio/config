@@ -117,7 +117,7 @@ ln -sf "$(pwd)/fish" ~/.config/fish
 - Automatic theme switching (Catppuccin light/dark)
 - Integration with Starship prompt and Zoxide
 
-#### conf.d/ Architecture
+#### conf.d/
 
 Configuration files are loaded in numbered order:
 - `00-paths.fish` - PATH setup (uses `fish_add_path` for deduplication)
