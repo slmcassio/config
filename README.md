@@ -281,6 +281,28 @@ ln -sf "$(pwd)/vscode/settings.json" ~/Library/Application\ Support/Cursor/User/
 cat vscode/extension-list | xargs -I {} cursor --install-extension {}
 ```
 
+## AI Assistant Configuration
+
+This repository includes context files for AI coding assistants, helping them understand the project conventions:
+
+| Tool | File | Format |
+|------|------|--------|
+| [Claude Code](https://claude.ai/code) | `.claude/rules/dotfiles.md` | Markdown |
+| [Cursor](https://cursor.com) | `.cursor/rules/dotfiles.mdc` | MDC (Markdown + YAML frontmatter) |
+| [Antigravity](https://antigravity.google) | `.gemini/GEMINI.md` | Markdown |
+
+These files contain identical conventions about:
+- Fish shell configuration and load order
+- Catppuccin theme system (light/dark variants)
+- Neovim plugin organization
+- Testing procedures for changes
+
+**For OpenAI Codex users**: Add fallback support in `~/.codex/config.toml`:
+
+```toml
+project_doc_fallback_filenames = [".gemini/GEMINI.md"]
+```
+
 ## Backup Existing Configuration
 
 **Before applying new configurations, backup your existing setup**:
