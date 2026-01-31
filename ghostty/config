@@ -17,7 +17,13 @@ font-size = 13
 adjust-cell-height = 20%
 
 #-----------------------------------------------
-# Set Padding
+# Set Window Size
+#-----------------------------------------------
+window-width = 130
+window-height = 42
+
+#-----------------------------------------------
+# Set Window Padding
 #-----------------------------------------------
 window-padding-x = 10
 window-padding-y = 10
