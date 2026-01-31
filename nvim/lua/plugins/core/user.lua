@@ -34,6 +34,7 @@ return {
       mappings = {
         n = {
           ["gm"] = { name = "Multiple Cursors" },
+          ["<Leader>a"] = { name = "AI Assistant" },
           ["<Leader><tab>"] = { "<cmd>b#<cr>", desc = "Previous tab" },
           ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
           ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },

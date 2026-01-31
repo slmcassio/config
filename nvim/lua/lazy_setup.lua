@@ -16,6 +16,7 @@ require("lazy").setup({
   { import = "plugins.ui" },
   { import = "plugins.editing" },
   { import = "plugins.language" },
+  { import = "plugins.tools" },
 } --[[@as LazySpec]], {
   install = { colorscheme = { "catppuccin" } },
   ui = { backdrop = 100 },
