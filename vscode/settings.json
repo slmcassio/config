@@ -27,6 +27,5 @@
   "window.commandCenter": true,
   "projectManager.git.baseFolders": [
     "/Users/slm.cassio/Developer"
-  ],
-  "python.languageServer": "Default"
+  ]
 }
