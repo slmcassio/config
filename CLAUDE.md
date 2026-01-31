@@ -19,7 +19,7 @@ Files in `fish/conf.d/` load in numbered order (00-90):
 - `60-sdk.fish` - SDKMAN for Java
 - `90-themes.fish` - Theme switching (loaded last to override)
 
-Custom functions live in `fish/functions/`, abbreviations in `fish/config.fish`. Tool initialization (starship, zoxide, fzf) happens in `fish/config.fish` within the interactive block.
+Custom functions live in `fish/functions/`, abbreviations in `fish/config.fish`.
 
 ### Theme Switching System
 Each tool has theme switcher scripts that respond to macOS appearance:
@@ -32,10 +32,9 @@ Each tool has theme switcher scripts that respond to macOS appearance:
 - `nvim/lua/lazy_setup.lua` - Plugin manager configuration
 - `nvim/lua/plugins/` - Plugin specs organized by purpose:
   - `core/` - User overrides for AstroNvim
-  - `ui/` - Visual plugins (which-key, snacks, showkeys)
-  - `editing/` - Text manipulation (surround, autopairs, trim)
+  - `ui/` - Visual plugins (which-key, snacks)
+  - `editing/` - Text manipulation (surround, autopairs)
   - `language/` - Language-specific (Conjure for Clojure)
-  - `tools/` - Development tools (claudecode.nvim)
 
 ## Symlink Installation
 
@@ -55,4 +54,4 @@ Configurations are symlinked from this repo to their expected locations:
 `clojure/deps.edn` provides REPL aliases:
 - `clj -M:repl/basic` - Interactive REPL with nREPL/CIDER
 - `clj -M:repl/headless` - Headless REPL for editor connections
-- `clj -M:test` - Run tests with Kaocha
+- `clj -X:test` - Run tests with Kaocha
