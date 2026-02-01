@@ -50,7 +50,7 @@ Leader keys: `<Leader>` = space, `<localleader>` = comma
   - `ui/` - Visual plugins (which-key, snacks, showkeys)
   - `editing/` - Text manipulation (trim.nvim)
   - `language/` - Language-specific (other.nvim for src/test switching)
-  - `tools/` - Development tools (claudecode.nvim)
+  - `tools/` - Development tools
 
 Each category has an `init.lua` that imports sibling plugins.
 
