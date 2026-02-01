@@ -28,7 +28,7 @@ return {
           ["conjure#client#clojure#nrepl#connection#auto_repl#hidden"] = true,
           ["conjure#client#clojure#nrepl#connection#auto_repl#cmd"] = nil,
           ["conjure#client#clojure#nrepl#eval#auto_require"] = false,
-          ["conjure#client#clojure#nrepl#test#runner"] = "kaocha",
+          ["conjure#client#clojure#nrepl#test#runner"] = "clojure", -- default; toggle with <localleader>tk
         },
       },
       mappings = {
@@ -44,6 +44,15 @@ return {
           ["<Leader>gJ"] = { "<cmd>GistsList<cr>", desc = "List Gist" },
           ["<localLeader>ts"] = { "<cmd>Other<cr>", desc = "Switch src & test" },
           ["<localLeader>tS"] = { "<cmd>OtherVSplit<cr>", desc = "Switch src & test (Split)" },
+          ["<localLeader>tk"] = {
+            function()
+              local current = vim.g["conjure#client#clojure#nrepl#test#runner"]
+              local new = current == "kaocha" and "clojure" or "kaocha"
+              vim.g["conjure#client#clojure#nrepl#test#runner"] = new
+              vim.notify("Conjure test runner: " .. new)
+            end,
+            desc = "Toggle Kaocha/clojure.test",
+          },
           ["<Leader>uk"] = { "<cmd>ShowkeysToggle<cr>", desc = "Toggle Showkeys" },
         },
         t = {},
