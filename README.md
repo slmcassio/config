@@ -127,6 +127,7 @@ Configuration files are loaded in numbered order:
 - `40-gpg.fish` - GPG/SSH agent setup
 - `50-starship.fish` - Prompt configuration
 - `60-sdk.fish` - SDKMAN integration
+- `70-nvm.fish` - Node version manager
 - `90-themes.fish` - Theme switching (loaded last)
 
 #### Custom Functions & Features
@@ -222,7 +223,30 @@ curl -s "https://get.sdkman.io" | bash
 fisher install reitzig/sdkman-for-fish@v2.1.0
 ```
 
-#### 9. Clojure
+#### 9. nvm.fish (Node Version Manager)
+
+**Install nvm.fish**:
+
+```bash
+# Native Fish implementation of Node version manager
+fisher install jorgebucaran/nvm.fish
+
+# Install latest LTS Node version
+nvm install lts
+
+# Set default version (activates automatically in new shells)
+set -U nvm_default_version lts
+```
+
+**Usage**:
+- `nvm install lts` - Install latest LTS
+- `nvm install 20` - Install specific version
+- `nvm use lts` - Activate version
+- `nvm list` - List installed versions
+
+**Auto-switching**: nvm.fish automatically switches Node versions when entering a directory with a `.nvmrc` file.
+
+#### 10. Clojure
 
 **Install Clojure**:
 
@@ -238,7 +262,7 @@ ln -sf "$(pwd)/clojure" ~/.clojure
 
 Choose the preferred option: Neovim or Antigravity/Cursor.
 
-#### 10. Neovim
+#### 11. Neovim
 
 This editor that leverages all the tools installed above.
 
@@ -253,7 +277,7 @@ ln -sf "$(pwd)/nvim" ~/.config/nvim
 
 Note**: Neovim is installed last because it leverages many of the tools installed in previous steps (bat for syntax highlighting, fzf for fuzzy finding, fd for file searching, ripgrep for code search, etc.).
 
-#### 11. VSCode Based Editors (Antigravity, Cursor)
+#### 12. VSCode Based Editors (Antigravity, Cursor)
 
 **Install Antigravity**:
 
@@ -330,6 +354,7 @@ mv ~/.cache/nvim ~/.cache/nvim.backup
 - **Fisher Plugin Manager**: [jorgebucaran/fisher](https://github.com/jorgebucaran/fisher)
 - **SDKMAN**: [sdkman/sdkman-cli](https://github.com/sdkman/sdkman-cli)
 - **SDKMAN for Fish**: [reitzig/sdkman-for-fish](https://github.com/reitzig/sdkman-for-fish)
+- **nvm.fish**: [jorgebucaran/nvm.fish](https://github.com/jorgebucaran/nvm.fish)
 - **Clojure Configuration**: [practicalli/clojure-cli-config](https://github.com/practicalli/clojure-cli-config)
 - **Neovim (AstroNvim v5)**: [practicalli/nvim-astro5](https://github.com/practicalli/nvim-astro5)
 - **Antigravity**: [antigravity.google](https://antigravity.google)
