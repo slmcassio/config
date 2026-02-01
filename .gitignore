@@ -16,6 +16,8 @@ fish/conf.d/sdk.fish
 fish/functions/fisher.fish
 fish/functions/sdk.fish
 fish/functions/__sdkman-noexport-init.sh
+fish/functions/nvm.fish
+fish/functions/_nvm_*.fish
 
 # Clojure
 clojure/.cpcache/*
