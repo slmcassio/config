@@ -1,308 +1,429 @@
 // Place your key bindings in this file to override the defaults
 [
-
-    // -----------------------------------------------------------------------
-    // Explorer: CMD+A adds a file or folder
-    // -----------------------------------------------------------------------
-    {
-        "key": "cmd+a",
-        "command": "explorer.newFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-    },
-    {
-        "key": "cmd+a",
-        "command": "-editor.action.selectAll",
-        "when": "explorerViewletVisible && filesExplorerFocus"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Explorer: CMD+D deletes file or folder
-    // -----------------------------------------------------------------------
-    {
-        "key": "cmd+d",
-        "command": "deleteFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-    },
-    {
-        "key": "cmd+d",
-        "command": "-editor.action.addSelectionToNextFindMatch",
-        "when": "explorerViewletVisible && filesExplorerFocus"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Explorer: CMD+R renames file or folder
-    // -----------------------------------------------------------------------
-    {
-        "key": "cmd+r",
-        "command": "renameFile",
-        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Explorer: ENTER opens file
-    // -----------------------------------------------------------------------
-    {
-        "key": "enter",
-        "command": "list.select",
-        "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
-    },
-    {
-        "key": "enter",
-        "command": "-renameFile",
-        "when": "filesExplorerFocus && !inputFocus"
-    },
-
-    // -----------------------------------------------------------------------
-    // IDE: Panel 
-    // -----------------------------------------------------------------------
-    {
-        "key": "shift+cmd+b",
-        "command": "workbench.action.togglePanel"
-    },
-    {
-        "key": "shift+cmd+b",
-        "command": "-workbench.action.tasks.build",
-        "when": "taskCommandsRegistered"
-    },
-    {
-        "key": "cmd+j",
-        "command": "-workbench.action.togglePanel"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // IDE:Focus Editor
-    // -----------------------------------------------------------------------
-    {
-        "key": "cmd+h",
-        "command": "workbench.action.focusActiveEditorGroup"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Navigation: Back/Forward
-    // -----------------------------------------------------------------------
-    {
-        "key": "ctrl+alt+h",
-        "command": "workbench.action.navigateBack"
-    },
-    {
-        "key": "ctrl+alt+l",
-        "command": "workbench.action.navigateForward"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Navigation: Go to Definition
-    // -----------------------------------------------------------------------
-    {
-        "key": "ctrl+alt+k",
-        "command": "editor.action.revealDefinition",
-        "when": "editorHasDefinitionProvider && editorTextFocus"
-    },
-    {
-        "key": "ctrl+alt+k",
-        "command": "editor.action.revealDefinition",
-        "when": "false"
-    },
-    {
-        "key": "ctrl+alt+k",
-        "command": "editor.gotoNextSymbolFromResult",
-        "when": "hasSymbols"
-    },
-    {
-        "key": "f12",
-        "command": "-editor.action.revealDefinition",
-        "when": "editorHasDefinitionProvider && editorTextFocus"
-    },
-    {
-        "key": "cmd+f12",
-        "command": "-editor.action.revealDefinition",
-        "when": "editorHasDefinitionProvider && editorTextFocus && isWeb"
-    },
-    {
-        "key": "f12",
-        "command": "-editor.gotoNextSymbolFromResult",
-        "when": "hasSymbols"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Navigation: Go to References
-    // -----------------------------------------------------------------------
-    {
-        "key": "ctrl+alt+j",
-        "command": "editor.action.goToReferences",
-        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-    },
-    {
-        "key": "ctrl+alt+j",
-        "command": "goToNextReference",
-        "when": "inReferenceSearchEditor || referenceSearchVisible"
-    },
-    {
-        "key": "ctrl+alt+k",
-        "command": "goToPreviousReference",
-        "when": "inReferenceSearchEditor || referenceSearchVisible"
-    },
-    {
-        "key": "shift+f12",
-        "command": "-editor.action.goToReferences",
-        "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
-    },
-    {
-        "key": "f12",
-        "command": "-goToNextReference",
-        "when": "inReferenceSearchEditor || referenceSearchVisible"
-    },
-    {
-        "key": "shift+f12",
-        "command": "-goToPreviousReference",
-        "when": "inReferenceSearchEditor || referenceSearchVisible"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Settings 
-    // -----------------------------------------------------------------------
-    {
-        "key": "ctrl+,",
-        "command": "aiSettings.action.open", // (cursor) settings 
-        "when": "!isSettingsPaneOpen"
-    },
-    {
-        "key": "ctrl+alt+,",
-        "command": "workbench.action.openAntigravitySettings" // (antigravity) settings
-    },
-    {
-        "key": "alt+cmd+,",
-        "command": "workbench.action.openSettingsJson" // (antigravity/cursor) editor settings JSON
-    },
-    {
-        "key": "shift+cmd+j",
-        "command": "-aiSettings.action.open",
-        "when": "!isSettingsPaneOpen"
-    },
-    {
-        "key": "cmd+,",
-        "command": "-workbench.action.openAntigravitySettings"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Calva: REPL CONNECTION - Start and connect (Cmd+M C prefix)
-    // -----------------------------------------------------------------------
-    {
-        "key": "cmd+m c c",
-        "command": "calva.connect",
-        "when": "editorLangId == clojure"
-    },
-    {
-        "key": "cmd+m c j",
-        "command": "calva.jackIn",
-        "when": "editorLangId == clojure"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Calva: REPL EVALUATION - Evaluate code (Cmd+M E prefix)
-    // -----------------------------------------------------------------------
-    {
-        "key": "cmd+m e i",
-        "command": "calva.evaluateCurrentTopLevelForm",
-        "when": "editorLangId == clojure && editorTextFocus"
-    },
-    {
-        "key": "cmd+m e r",
-        "command": "calva.evaluateCurrentTopLevelFormInREPLWindow",
-        "when": "editorLangId == clojure && editorTextFocus"
-    },
-    {
-        "key": "cmd+m e s",
-        "command": "calva.evaluateSelection",
-        "when": "editorLangId == clojure && editorHasSelection && editorTextFocus"
-    },
-    {
-        "key": "cmd+m e t",
-        "command": "calva.sendCurrentFormToRepl",
-        "when": "editorLangId == clojure && editorTextFocus"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Calva: REPL FILE OPERATIONS - Load file (Cmd+M L prefix)
-    // -----------------------------------------------------------------------
-    {
-        "key": "cmd+m l f",
-        "command": "calva.loadFile",
-        "when": "editorLangId == clojure && editorTextFocus"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Calva: REPL UTILITIES - Clear and interrupt (Cmd+M U prefix)
-    // -----------------------------------------------------------------------
-    {
-        "key": "cmd+m u c",
-        "command": "calva.clearInlineResults",
-        "when": "editorLangId == clojure"
-    },
-    {
-        "key": "cmd+m u i",
-        "command": "calva.interrupt",
-        "when": "editorLangId == clojure"
-    },
-    {
-        "key": "ctrl+alt+j",
-        "command": "-notebook.cell.joinBelow",
-        "when": "notebookEditorFocused"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Calva: STRUCTURAL EDITING - Barf (Cmd+M B prefix)
-    // -----------------------------------------------------------------------
-    {
-        "key": "cmd+m b h",
-        "command": "paredit.barfSexpBackward",
-        "when": "editorLangId == clojure && editorTextFocus && !editorReadOnly"
-    },
-    {
-        "key": "cmd+m b l",
-        "command": "paredit.barfSexpForward",
-        "when": "editorLangId == clojure && editorTextFocus && !editorReadOnly"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Calva: STRUCTURAL EDITING - Expand/Shrink selection (Cmd+M X prefix)
-    // -----------------------------------------------------------------------
-    {
-        "key": "cmd+m x j",
-        "command": "paredit.sexpRangeContraction",
-        "when": "editorLangId == clojure && editorTextFocus"
-    },
-    {
-        "key": "cmd+m x k",
-        "command": "paredit.sexpRangeExpansion",
-        "when": "editorLangId == clojure && editorTextFocus"
-    },
-
-
-    // -----------------------------------------------------------------------
-    // Calva: STRUCTURAL EDITING - Slurp (Cmd+M S prefix)
-    // -----------------------------------------------------------------------
-    {
-        "key": "cmd+m s h",
-        "command": "paredit.slurpSexpBackward",
-        "when": "editorLangId == clojure && editorTextFocus && !editorReadOnly"
-    },
-    {
-        "key": "cmd+m s l",
-        "command": "paredit.slurpSexpForward",
-        "when": "editorLangId == clojure && editorTextFocus && !editorReadOnly"
-    }
+  // -----------------------------------------------------------------------
+  // Explorer: CMD+A adds a file or folder
+  // -----------------------------------------------------------------------
+  {
+    "key": "cmd+a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "cmd+a",
+    "command": "-editor.action.selectAll",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  // -----------------------------------------------------------------------
+  // Explorer: CMD+D deletes file or folder
+  // -----------------------------------------------------------------------
+  {
+    "key": "cmd+d",
+    "command": "deleteFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "cmd+d",
+    "command": "-editor.action.addSelectionToNextFindMatch",
+    "when": "explorerViewletVisible && filesExplorerFocus"
+  },
+  // -----------------------------------------------------------------------
+  // Explorer: CMD+R renames file or folder
+  // -----------------------------------------------------------------------
+  {
+    "key": "cmd+r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  // -----------------------------------------------------------------------
+  // Explorer: ENTER opens file
+  // -----------------------------------------------------------------------
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "explorerViewletVisible && filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "-renameFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  // -----------------------------------------------------------------------
+  // IDE: Panel 
+  // -----------------------------------------------------------------------
+  {
+    "key": "shift+cmd+b",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "shift+cmd+b",
+    "command": "-workbench.action.tasks.build",
+    "when": "taskCommandsRegistered"
+  },
+  {
+    "key": "cmd+j",
+    "command": "-workbench.action.togglePanel"
+  },
+  // -----------------------------------------------------------------------
+  // IDE:Focus Editor
+  // -----------------------------------------------------------------------
+  {
+    "key": "cmd+h",
+    "command": "workbench.action.focusActiveEditorGroup"
+  },
+  // -----------------------------------------------------------------------
+  // Navigation: Back/Forward
+  // -----------------------------------------------------------------------
+  {
+    "key": "ctrl+alt+h",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "ctrl+alt+l",
+    "command": "workbench.action.navigateForward"
+  },
+  // -----------------------------------------------------------------------
+  // Navigation: Go to Definition
+  // -----------------------------------------------------------------------
+  {
+    "key": "ctrl+alt+k",
+    "command": "editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "editor.action.revealDefinition",
+    "when": "false"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "editor.gotoNextSymbolFromResult",
+    "when": "hasSymbols"
+  },
+  {
+    "key": "f12",
+    "command": "-editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus"
+  },
+  {
+    "key": "cmd+f12",
+    "command": "-editor.action.revealDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && isWeb"
+  },
+  {
+    "key": "f12",
+    "command": "-editor.gotoNextSymbolFromResult",
+    "when": "hasSymbols"
+  },
+  // -----------------------------------------------------------------------
+  // Navigation: Go to References
+  // -----------------------------------------------------------------------
+  {
+    "key": "ctrl+alt+j",
+    "command": "editor.action.goToReferences",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  {
+    "key": "ctrl+alt+j",
+    "command": "goToNextReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "key": "ctrl+alt+k",
+    "command": "goToPreviousReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "key": "shift+f12",
+    "command": "-editor.action.goToReferences",
+    "when": "editorHasReferenceProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  {
+    "key": "f12",
+    "command": "-goToNextReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "key": "shift+f12",
+    "command": "-goToPreviousReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  // -----------------------------------------------------------------------
+  // Settings 
+  // -----------------------------------------------------------------------
+  {
+    "key": "ctrl+,",
+    "command": "aiSettings.action.open", // (cursor) settings 
+    "when": "!isSettingsPaneOpen"
+  },
+  {
+    "key": "ctrl+alt+,",
+    "command": "workbench.action.openAntigravitySettings" // (antigravity) settings
+  },
+  {
+    "key": "alt+cmd+,",
+    "command": "workbench.action.openSettingsJson" // (antigravity/cursor) editor settings JSON
+  },
+  {
+    "key": "shift+cmd+j",
+    "command": "-aiSettings.action.open",
+    "when": "!isSettingsPaneOpen"
+  },
+  {
+    "key": "cmd+,",
+    "command": "-workbench.action.openAntigravitySettings"
+  },
+  // -----------------------------------------------------------------------
+  // Calva: REPL CONNECTION - Start and connect (Cmd+M C prefix)
+  // -----------------------------------------------------------------------
+  {
+    "key": "cmd+m c c",
+    "command": "calva.connect",
+    "when": "editorLangId == clojure"
+  },
+  {
+    "key": "cmd+m c j",
+    "command": "calva.jackIn",
+    "when": "editorLangId == clojure"
+  },
+  // -----------------------------------------------------------------------
+  // Calva: REPL EVALUATION - Evaluate code (Cmd+M E prefix)
+  // -----------------------------------------------------------------------
+  {
+    "key": "cmd+m e i",
+    "command": "calva.evaluateCurrentTopLevelForm",
+    "when": "editorLangId == clojure && editorTextFocus"
+  },
+  {
+    "key": "cmd+m e r",
+    "command": "calva.evaluateCurrentTopLevelFormInREPLWindow",
+    "when": "editorLangId == clojure && editorTextFocus"
+  },
+  {
+    "key": "cmd+m e s",
+    "command": "calva.evaluateSelection",
+    "when": "editorLangId == clojure && editorHasSelection && editorTextFocus"
+  },
+  {
+    "key": "cmd+m e t",
+    "command": "calva.sendCurrentFormToRepl",
+    "when": "editorLangId == clojure && editorTextFocus"
+  },
+  // -----------------------------------------------------------------------
+  // Calva: REPL FILE OPERATIONS - Load file (Cmd+M L prefix)
+  // -----------------------------------------------------------------------
+  {
+    "key": "cmd+m l f",
+    "command": "calva.loadFile",
+    "when": "editorLangId == clojure && editorTextFocus"
+  },
+  // -----------------------------------------------------------------------
+  // Calva: REPL UTILITIES - Clear and interrupt (Cmd+M U prefix)
+  // -----------------------------------------------------------------------
+  {
+    "key": "cmd+m u c",
+    "command": "calva.clearInlineResults",
+    "when": "editorLangId == clojure"
+  },
+  {
+    "key": "cmd+m u i",
+    "command": "calva.interrupt",
+    "when": "editorLangId == clojure"
+  },
+  {
+    "key": "ctrl+alt+j",
+    "command": "-notebook.cell.joinBelow",
+    "when": "notebookEditorFocused"
+  },
+  // -----------------------------------------------------------------------
+  // Calva: STRUCTURAL EDITING - Barf (Cmd+M B prefix)
+  // -----------------------------------------------------------------------
+  {
+    "key": "cmd+m b h",
+    "command": "paredit.barfSexpBackward",
+    "when": "editorLangId == clojure && editorTextFocus && !editorReadOnly"
+  },
+  {
+    "key": "cmd+m b l",
+    "command": "paredit.barfSexpForward",
+    "when": "editorLangId == clojure && editorTextFocus && !editorReadOnly"
+  },
+  // -----------------------------------------------------------------------
+  // Calva: STRUCTURAL EDITING - Expand/Shrink selection (Cmd+M X prefix)
+  // -----------------------------------------------------------------------
+  {
+    "key": "cmd+m x j",
+    "command": "paredit.sexpRangeContraction",
+    "when": "editorLangId == clojure && editorTextFocus"
+  },
+  {
+    "key": "cmd+m x k",
+    "command": "paredit.sexpRangeExpansion",
+    "when": "editorLangId == clojure && editorTextFocus"
+  },
+  // -----------------------------------------------------------------------
+  // Calva: STRUCTURAL EDITING - Slurp (Cmd+M S prefix)
+  // -----------------------------------------------------------------------
+  {
+    "key": "cmd+m s h",
+    "command": "paredit.slurpSexpBackward",
+    "when": "editorLangId == clojure && editorTextFocus && !editorReadOnly"
+  },
+  {
+    "key": "cmd+m s l",
+    "command": "paredit.slurpSexpForward",
+    "when": "editorLangId == clojure && editorTextFocus && !editorReadOnly"
+  },
+  // -----------------------------------------------------------------------
+  // VSpaceCode: Space leader key
+  // -----------------------------------------------------------------------
+  {
+    "key": "space",
+    "command": "vspacecode.space",
+    "when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
+  },
+  {
+    "key": "space",
+    "command": "vspacecode.space",
+    "when": "sideBarFocus && !inputFocus && !whichkeyActive"
+  },
+  {
+    "key": "space",
+    "command": "vspacecode.space",
+    "when": "filesExplorerFocus && !inputFocus && !whichkeyActive"
+  },
+  {
+    "key": "space",
+    "command": "vspacecode.space",
+    "when": "listFocus && !inputFocus && !whichkeyActive"
+  },
+  {
+    "key": "space",
+    "command": "vspacecode.space",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && !whichkeyActive && !inputFocus"
+  },
+  // -----------------------------------------------------------------------
+  // VSpaceCode: Tab for last buffer (AstroVim style)
+  // -----------------------------------------------------------------------
+  {
+    "key": "tab",
+    "command": "extension.vim_tab",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert' && editorLangId != 'magit'"
+  },
+  {
+    "key": "tab",
+    "command": "-extension.vim_tab",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  // -----------------------------------------------------------------------
+  // AstroVim-like: Window Navigation (Ctrl+h/j/k/l)
+  // Note: Ctrl+Alt variants for navigation won't conflict
+  // -----------------------------------------------------------------------
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.navigateLeft",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.navigateDown",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.navigateUp",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.navigateRight",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  // -----------------------------------------------------------------------
+  // AstroVim-like: Buffer Navigation (]b and [b)
+  // -----------------------------------------------------------------------
+  {
+    "key": "] b",
+    "command": "workbench.action.nextEditor",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  {
+    "key": "[ b",
+    "command": "workbench.action.previousEditor",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
+  },
+  // -----------------------------------------------------------------------
+  // Quick Open Navigation: Ctrl+j/k (same as AstroVim telescope)
+  // -----------------------------------------------------------------------
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  // -----------------------------------------------------------------------
+  // Suggestions Widget: Ctrl+j/k navigation
+  // -----------------------------------------------------------------------
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "acceptSelectedSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  // -----------------------------------------------------------------------
+  // Parameter Hints: Ctrl+j/k navigation
+  // -----------------------------------------------------------------------
+  {
+    "key": "ctrl+j",
+    "command": "showNextParameterHint",
+    "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "showPrevParameterHint",
+    "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+  },
+  // -----------------------------------------------------------------------
+  // Code Actions: Ctrl+j/k navigation
+  // -----------------------------------------------------------------------
+  {
+    "key": "ctrl+j",
+    "command": "selectNextCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "acceptSelectedCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  // -----------------------------------------------------------------------
+  // File Browser: Ctrl+h/l for parent/child navigation
+  // -----------------------------------------------------------------------
+  {
+    "key": "ctrl+h",
+    "command": "file-browser.stepOut",
+    "when": "inFileBrowser"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "file-browser.stepIn",
+    "when": "inFileBrowser"
+  }
 ]
