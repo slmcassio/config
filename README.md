@@ -305,6 +305,20 @@ ln -sf "$(pwd)/vscode/settings.json" ~/Library/Application\ Support/Cursor/User/
 cat vscode/extension-list | xargs -I {} cursor --install-extension {}
 ```
 
+#### Keybindings: Remove All Defaults
+
+This repository generates a keybindings file that removes every default binding.
+The defaults list must be exported manually from a VS Code-based IDE:
+
+- Run `Preferences: Open Default Keyboard Shortcuts (JSON)`
+- Save the contents as `vscode/default-keybindings.json`
+
+Then regenerate the keybindings file:
+
+```bash
+node scripts/update-keybindings-defaults.mjs
+```
+
 ## Backup Existing Configuration
 
 **Before applying new configurations, backup your existing setup**:

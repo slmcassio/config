@@ -12,9 +12,6 @@
   "editor.minimap.enabled": false,
   "git.path": "/usr/bin/git",
   "vim.enableNeovim": true,
-  "vim.handleKeys": {
-    "<C-n>": false
-  },
   "vim.highlightedyank.duration": 700,
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "rgba(245, 194, 231, 0.3)",
@@ -88,6 +85,12 @@
           "name": "New chat tab",
           "type": "command",
           "command": "composer.createNewComposerTab"
+        },
+        {
+          "key": "w",
+          "name": "Close chat",
+          "type": "command",
+          "command": "composer.closeComposerTab"
         },
         {
           "key": "f",
@@ -342,6 +345,61 @@
       ]
     },
     {
+      "key": "d",
+      "name": "+Debug",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "s",
+          "name": "Start debug",
+          "type": "command",
+          "command": "workbench.action.debug.start"
+        },
+        {
+          "key": "c",
+          "name": "Continue",
+          "type": "command",
+          "command": "workbench.action.debug.continue"
+        },
+        {
+          "key": "x",
+          "name": "Stop",
+          "type": "command",
+          "command": "workbench.action.debug.stop"
+        },
+        {
+          "key": "r",
+          "name": "Restart",
+          "type": "command",
+          "command": "workbench.action.debug.restart"
+        },
+        {
+          "key": "o",
+          "name": "Step over",
+          "type": "command",
+          "command": "workbench.action.debug.stepOver"
+        },
+        {
+          "key": "i",
+          "name": "Step into",
+          "type": "command",
+          "command": "workbench.action.debug.stepInto"
+        },
+        {
+          "key": "u",
+          "name": "Step out",
+          "type": "command",
+          "command": "workbench.action.debug.stepOut"
+        },
+        {
+          "key": "b",
+          "name": "Toggle breakpoint",
+          "type": "command",
+          "command": "debug.toggleBreakpoint"
+        }
+      ]
+    },
+    {
       "key": "l",
       "name": "+LSP",
       "type": "bindings",
@@ -405,6 +463,61 @@
           "name": "Workspace symbols",
           "type": "command",
           "command": "workbench.action.showAllSymbols"
+        }
+      ]
+    },
+    {
+      "key": "T",
+      "name": "+Testing",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "a",
+          "name": "Run all tests",
+          "type": "command",
+          "command": "testing.runAll"
+        },
+        {
+          "key": "f",
+          "name": "Run current file",
+          "type": "command",
+          "command": "testing.runCurrentFile"
+        },
+        {
+          "key": "c",
+          "name": "Run test at cursor",
+          "type": "command",
+          "command": "testing.runAtCursor"
+        },
+        {
+          "key": "l",
+          "name": "Re-run last",
+          "type": "command",
+          "command": "testing.reRunLastRun"
+        },
+        {
+          "key": "e",
+          "name": "Re-run failed",
+          "type": "command",
+          "command": "testing.reRunFailTests"
+        },
+        {
+          "key": "d",
+          "name": "Debug test at cursor",
+          "type": "command",
+          "command": "testing.debugAtCursor"
+        },
+        {
+          "key": "o",
+          "name": "Show most recent output",
+          "type": "command",
+          "command": "testing.showMostRecentOutput"
+        },
+        {
+          "key": "p",
+          "name": "Open output peek",
+          "type": "command",
+          "command": "testing.openOutputPeek"
         }
       ]
     },
@@ -575,6 +688,49 @@
       ]
     },
     {
+      "key": "x",
+      "name": "+Code",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "c",
+          "name": "Toggle line comment",
+          "type": "command",
+          "command": "editor.action.commentLine"
+        },
+        {
+          "key": "b",
+          "name": "Toggle block comment",
+          "type": "command",
+          "command": "editor.action.blockComment"
+        },
+        {
+          "key": "f",
+          "name": "Format selection",
+          "type": "command",
+          "command": "editor.action.formatSelection"
+        },
+        {
+          "key": "o",
+          "name": "Organize imports",
+          "type": "command",
+          "command": "editor.action.organizeImports"
+        },
+        {
+          "key": "a",
+          "name": "Insert line after",
+          "type": "command",
+          "command": "editor.action.insertLineAfter"
+        },
+        {
+          "key": "i",
+          "name": "Insert line before",
+          "type": "command",
+          "command": "editor.action.insertLineBefore"
+        }
+      ]
+    },
+    {
       "key": "p",
       "name": "+Project",
       "type": "bindings",
@@ -664,6 +820,24 @@
           "name": "Search commands",
           "type": "command",
           "command": "workbench.action.showCommands"
+        },
+        {
+          "key": "i",
+          "name": "Toggle case sensitivity",
+          "type": "command",
+          "command": "workbench.action.search.toggleCaseSensitive"
+        },
+        {
+          "key": "w",
+          "name": "Toggle whole word",
+          "type": "command",
+          "command": "workbench.action.search.toggleWholeWord"
+        },
+        {
+          "key": "x",
+          "name": "Toggle regex",
+          "type": "command",
+          "command": "workbench.action.search.toggleRegex"
         }
       ]
     },
@@ -914,6 +1088,24 @@
           "name": "Previous group",
           "type": "command",
           "command": "workbench.action.focusPreviousGroup"
+        },
+        {
+          "key": "m",
+          "name": "Maximize panel",
+          "type": "command",
+          "command": "workbench.action.toggleMaximizedPanel"
+        },
+        {
+          "key": "L",
+          "name": "Move editor right",
+          "type": "command",
+          "command": "workbench.action.moveEditorToNextGroup"
+        },
+        {
+          "key": "H",
+          "name": "Move editor left",
+          "type": "command",
+          "command": "workbench.action.moveEditorToPreviousGroup"
         }
       ]
     }
@@ -926,7 +1118,7 @@
   "workbench.preferredLightColorTheme": "Catppuccin Latte",
   "window.commandCenter": true,
   "projectManager.git.baseFolders": [
-    "/Users/slm.cassio/Developer"
+    "~/Developer"
   ],
   "terminal.integrated.defaultProfile.osx": "fish"
 }

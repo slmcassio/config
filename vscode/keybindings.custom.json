@@ -1,0 +1,221 @@
+[
+  {
+    "key": "space",
+    "command": "vspacecode.space",
+    "when": "activeEditorGroupEmpty && focusedView == '' && !whichkeyActive && !inputFocus"
+  },
+  {
+    "key": "space",
+    "command": "vspacecode.space",
+    "when": "sideBarFocus && !inputFocus && !whichkeyActive"
+  },
+  {
+    "key": "space",
+    "command": "vspacecode.space",
+    "when": "filesExplorerFocus && !inputFocus && !whichkeyActive"
+  },
+  {
+    "key": "space",
+    "command": "vspacecode.space",
+    "when": "listFocus && !inputFocus && !whichkeyActive"
+  },
+  {
+    "key": "space",
+    "command": "vspacecode.space",
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && !whichkeyActive && !inputFocus"
+  },
+  {
+    "key": "up",
+    "command": "list.focusUp",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "down",
+    "command": "list.focusDown",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "left",
+    "command": "list.collapse",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "right",
+    "command": "list.expand",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "h",
+    "command": "list.collapse",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "l",
+    "command": "list.expand",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
+  },
+  {
+    "key": "up",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "whichkeyVisible"
+  },
+  {
+    "key": "down",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "whichkeyVisible"
+  },
+  {
+    "key": "up",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "down",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "left",
+    "command": "whichkey.undoKey",
+    "when": "whichkeyVisible"
+  },
+  {
+    "key": "right",
+    "command": "whichkey.triggerKey",
+    "when": "whichkeyVisible"
+  },
+  {
+    "key": "cmd+a",
+    "command": "editor.action.selectAll",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+a",
+    "command": "editor.action.selectAll"
+  },
+  {
+    "key": "cmd+a",
+    "command": "list.selectAll",
+    "when": "listFocus && !inputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "cancelSelection",
+    "when": "editorHasSelection && textInputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "removeSecondaryCursors",
+    "when": "editorHasMultipleSelections && textInputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "editor.action.inlineSuggest.hide",
+    "when": "inlineSuggestionVisible && textInputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "extension.vim_escape",
+    "when": "vim.active && vim.mode == 'Insert'"
+  },
+  {
+    "key": "cmd+z",
+    "command": "undo",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.closeActiveEditor",
+    "when": "editorFocus || editorTextFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "editorFocus || editorTextFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.focusBelowGroup",
+    "when": "multipleEditorGroups && (editorFocus || editorTextFocus)"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusAboveGroup",
+    "when": "multipleEditorGroups && (editorFocus || editorTextFocus)"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "panelFocus || terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "sideBarFocus || explorerViewletFocus || filesExplorerFocus || listFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusRightGroup",
+    "when": "editorFocus || editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.focusAuxiliaryBar",
+    "when": "!multipleEditorGroups && (editorFocus || editorTextFocus) && !auxiliaryBarFocus"
+  },
+  {
+    "key": "ctrl+shift+h",
+    "command": "workbench.action.focusSideBar",
+    "when": "editorFocus || editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+l",
+    "command": "workbench.action.focusAuxiliaryBar",
+    "when": "(editorFocus || editorTextFocus || sideBarFocus || explorerViewletFocus || filesExplorerFocus || listFocus) && !auxiliaryBarFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "auxiliaryBarFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+.",
+    "command": "composer.openModeMenu",
+    "when": "chatModeMenuFocused && !editorTextFocus || composerFocused && !editorTextFocus || !editorTextFocus && activeEditor == 'workbench.editor.composer' || !editorTextFocus && focusedView =~ /^workbench.panel.aichat.view/"
+  },
+  {
+    "key": "ctrl+/",
+    "command": "composer.openModelToggle",
+    "when": "composerFocused && !editorTextFocus || !editorTextFocus && activeEditor == 'workbench.editor.composer' || !editorTextFocus && focusedView =~ /^workbench.panel.aichat.view/"
+  }
+]
