@@ -1,0 +1,47 @@
+---
+description: VS Code / Cursor vspacecode keybinding ordering (Spacemacs-style)
+alwaysApply: true
+---
+
+# VS Code / Cursor keybindings ordering
+
+When editing `vscode/settings.json` or changing `vspacecode.bindings`, keep the which-key menu ordered as below (Spacemacs-style: mnemonic + discoverable).
+
+## Top-level `vspacecode.bindings` order
+
+Use this sequence for the root Space menu:
+
+1. **Essentials**: ` ` (command palette), `/`, `?`, `Q`, `W`, `,`
+2. **Context / navigation**: `c` (Cursor), `b` (Buffers), `f` (Find), `p` (Project), `e` (Explorer)
+3. **Search & version control**: `s` (Search), `g` (Git)
+4. **Code & tools**: `l` (LSP), `d` (Debug), `T` (Testing), `m` (Major), `x` (Code)
+5. **Session / UI**: `t` (Terminal), `q` (Quit), `u` (UI), `v` (View), `w` (Window)
+
+## Submenu order
+
+In every submenu (and nested bindings), order entries by **mnemonics and frequency of use**, not strict alphabetic order.
+
+General pattern:
+
+- **Group commands by role** in this sequence:
+  - **Navigate / open** (jump to or open things)
+  - **Create** (new buffers/files/resources)
+  - **Modify / act** (save, delete, rename, apply actions)
+  - **Misc / maintenance** (less‑frequent or advanced tools)
+- **Within each group**, you may sort alphabetically by `key` if there isn’t a clear frequency winner.
+- Put entries with empty `key` (e.g. “No major mode”) **last**.
+
+Concrete examples:
+
+- **+Find (`SPC f`)** — navigation first, then search/refine:
+  - Navigate/open: `f` (find files), `r` (open recent), `b` (list buffers), `o` (open file), `O` (open folder)
+  - Search/refine: `w` (find in files), `s` (go to symbol in file), `S` (go to symbol in workspace)
+- **+Buffers (`SPC b`)** — mirrors Spacemacs:
+  - `b` (list buffers), `n`/`p` (next/previous), `d` (close), `o` (close others), `a` (close all), `r` (reopen)
+- **+Git (`SPC g`)** — main workflow first:
+  - `s` (stage), `S` (stage all), `u` (unstage), `U` (unstage all), then `c` (commit), `p` (push), `f` (fetch), `l` (pull), etc.
+
+## Applying the order
+
+- **Top-level**: reorder the `vspacecode.bindings` array to match the list above.
+- **Submenus**: group each `bindings` array by role as above, then order within each group (empty key last). 

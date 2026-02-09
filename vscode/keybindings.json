@@ -169,7 +169,7 @@
   {
     "key": "escape",
     "command": "extension.vim_escape",
-    "when": "vim.active && vim.mode == 'Insert'"
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
   },
   {
     "key": "cmd+z",
@@ -182,14 +182,14 @@
     "when": "textInputFocus"
   },
   {
-    "key": "backspace",
-    "command": "deleteLeft",
-    "when": "textInputFocus && vim.active && vim.mode == 'Insert'"
-  },
-  {
     "key": "delete",
     "command": "deleteRight",
     "when": "textInputFocus && vim.active && vim.mode == 'Insert'"
+  },
+  {
+    "key": "backspace",
+    "command": "extension.vim_backspace",
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
   },
   {
     "key": "cmd+w",
@@ -265,6 +265,16 @@
     "key": "alt+k",
     "command": "editor.action.inlineDiffs.previousChange",
     "when": "editorTextFocus && inlineDiffs.activeEditorWithDiffs"
+  },
+  {
+    "key": "alt+shift+j",
+    "command": "editor.action.inlineDiffs.nextDiffFile",
+    "when": "editorTextFocus && inlineDiffs.hasInlineDiffsInAnyEditor"
+  },
+  {
+    "key": "alt+shift+k",
+    "command": "editor.action.inlineDiffs.previousDiffFile",
+    "when": "editorTextFocus && inlineDiffs.hasInlineDiffsInAnyEditor"
   },
   {
     "key": "cmd+enter",
