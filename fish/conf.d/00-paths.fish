@@ -13,8 +13,3 @@ fish_add_path $HOME/.local/bin
 # Homebrew paths
 fish_add_path /opt/homebrew/sbin
 fish_add_path /opt/homebrew/bin
-
-fish_add_path /Users/slm.cassio/.lando/bin
-
-# Antigravity Editor
-fish_add_path /Users/slm.cassio/.antigravity/antigravity/bin
