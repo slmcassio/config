@@ -305,6 +305,31 @@ ln -sf "$(pwd)/vscode/settings.json" ~/Library/Application\ Support/Cursor/User/
 cat vscode/extension-list | xargs -I {} cursor --install-extension {}
 ```
 
+**Cursor key repeat (macOS)**:
+
+If holding `j`/`k` does not repeat in Cursor, enable per-app key repeat (does not affect other apps like Notes):
+
+```bash
+set CURSOR_BUNDLE_ID "$(osascript -e 'id of app "Cursor"')"
+defaults write "$CURSOR_BUNDLE_ID" ApplePressAndHoldEnabled -bool false
+```
+
+Relaunch Cursor after running the command.
+
+#### Keybindings: Remove All Defaults
+
+This repository generates a keybindings file that removes every default binding.
+The defaults list must be exported manually from a VS Code-based IDE:
+
+- Run `Preferences: Open Default Keyboard Shortcuts (JSON)`
+- Save the contents as `vscode/keybindings.default.json`
+
+Then regenerate the keybindings file:
+
+```bash
+node scripts/activate-custom-keybindings.mjs
+```
+
 ## Backup Existing Configuration
 
 **Before applying new configurations, backup your existing setup**:
@@ -338,6 +363,10 @@ mv ~/.config/nvim ~/.config/nvim.backup
 mv ~/.local/share/nvim ~/.local/share/nvim.backup
 mv ~/.local/state/nvim ~/.local/state/nvim.backup
 mv ~/.cache/nvim ~/.cache/nvim.backup
+
+# VSCode-based editors (keybindings)
+mv ~/Library/Application\ Support/Antigravity/User/keybindings.json ~/Library/Application\ Support/Antigravity/User/keybindings.json.backup
+mv ~/Library/Application\ Support/Cursor/User/keybindings.json ~/Library/Application\ Support/Cursor/User/keybindings.json.backup
 ```
 
 ## References

@@ -8,14 +8,13 @@
   "editor.gotoLocation.alternativeDefinitionCommand": "",
   "editor.gotoLocation.alternativeTypeDefinitionCommand": "",
   "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 8,
   "editor.minimap.enabled": false,
   "git.path": "/usr/bin/git",
   "vim.enableNeovim": true,
-  "vim.handleKeys": {
-    "<C-n>": false
-  },
   "vim.highlightedyank.duration": 700,
   "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(245, 194, 231, 0.3)",
   "vim.highlightedyank.textColor": "#45475a",
   "vim.neovimPath": "/opt/homebrew/bin/nvim",
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -59,51 +58,82 @@
       "command": "whichkey.searchBindings"
     },
     {
-      "key": "a",
-      "name": "+AI/Cursor",
+      "key": "Q",
+      "name": "Quit Cursor",
+      "type": "command",
+      "command": "workbench.action.quit"
+    },
+    {
+      "key": "W",
+      "name": "Save file as",
+      "type": "command",
+      "command": "workbench.action.files.saveAs"
+    },
+    {
+      "key": ",",
+      "name": "+Settings",
       "type": "bindings",
       "bindings": [
         {
-          "key": "a",
-          "name": "Cursor settings",
-          "type": "command",
-          "command": "aiSettings.action.open"
-        },
-        {
-          "key": "f",
-          "name": "Focus Cursor panel",
-          "type": "command",
-          "command": "workbench.action.focusAuxiliaryBar"
-        },
-        {
-          "key": "i",
-          "name": "Cursor chat with context",
-          "type": "command",
-          "command": "aichat.newchataction"
-        },
-        {
-          "key": "o",
-          "name": "Open settings UI",
+          "key": "s",
+          "name": "Open Settings (UI)",
           "type": "command",
           "command": "workbench.action.openSettings"
         },
         {
-          "key": "p",
-          "name": "Antigravity settings",
-          "type": "command",
-          "command": "workbench.action.openAntigravitySettings"
-        },
-        {
-          "key": "s",
-          "name": "Open settings JSON",
+          "key": "j",
+          "name": "Open Settings (JSON)",
           "type": "command",
           "command": "workbench.action.openSettingsJson"
+        }
+      ]
+    },
+    {
+      "key": "c",
+      "name": "+Cursor",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "c",
+          "name": "Open chat",
+          "type": "command",
+          "command": "aichat.newchataction"
+        },
+        {
+          "key": "n",
+          "name": "New chat",
+          "type": "command",
+          "command": "composer.createNewWithPrevContext"
+        },
+        {
+          "key": "N",
+          "name": "New chat tab",
+          "type": "command",
+          "command": "composer.createNewComposerTab"
+        },
+        {
+          "key": "w",
+          "name": "Close chat",
+          "type": "command",
+          "command": "composer.closeComposerTab"
+        },
+        {
+          "key": "f",
+          "name": "Focus AI panel",
+          "type": "command",
+          "command": "workbench.action.focusAuxiliaryBar"
         },
         {
           "key": "t",
-          "name": "Toggle auxiliary bar",
+          "name": "Toggle AI panel",
           "type": "command",
           "command": "workbench.action.toggleAuxiliaryBar"
+        },
+        {
+          "key": "s",
+          "name": "Cursor settings",
+          "type": "command",
+          "command": "aiSettings.action.open"
         }
       ]
     },
@@ -223,8 +253,8 @@
           "command": "workbench.action.showAllEditors"
         },
         {
-          "key": "g",
-          "name": "Find in files",
+          "key": "w",
+          "name": "Find words",
           "type": "command",
           "command": "workbench.action.findInFiles"
         },
@@ -340,6 +370,61 @@
       ]
     },
     {
+      "key": "d",
+      "name": "+Debug",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "s",
+          "name": "Start debug",
+          "type": "command",
+          "command": "workbench.action.debug.start"
+        },
+        {
+          "key": "c",
+          "name": "Continue",
+          "type": "command",
+          "command": "workbench.action.debug.continue"
+        },
+        {
+          "key": "x",
+          "name": "Stop",
+          "type": "command",
+          "command": "workbench.action.debug.stop"
+        },
+        {
+          "key": "r",
+          "name": "Restart",
+          "type": "command",
+          "command": "workbench.action.debug.restart"
+        },
+        {
+          "key": "o",
+          "name": "Step over",
+          "type": "command",
+          "command": "workbench.action.debug.stepOver"
+        },
+        {
+          "key": "i",
+          "name": "Step into",
+          "type": "command",
+          "command": "workbench.action.debug.stepInto"
+        },
+        {
+          "key": "u",
+          "name": "Step out",
+          "type": "command",
+          "command": "workbench.action.debug.stepOut"
+        },
+        {
+          "key": "b",
+          "name": "Toggle breakpoint",
+          "type": "command",
+          "command": "debug.toggleBreakpoint"
+        }
+      ]
+    },
+    {
       "key": "l",
       "name": "+LSP",
       "type": "bindings",
@@ -364,15 +449,9 @@
         },
         {
           "key": "d",
-          "name": "Go to definition",
+          "name": "Diagnostics",
           "type": "command",
-          "command": "editor.action.revealDefinition"
-        },
-        {
-          "key": "D",
-          "name": "Go to declaration",
-          "type": "command",
-          "command": "editor.action.revealDeclaration"
+          "command": "workbench.action.problems.focus"
         },
         {
           "key": "i",
@@ -409,12 +488,61 @@
           "name": "Workspace symbols",
           "type": "command",
           "command": "workbench.action.showAllSymbols"
+        }
+      ]
+    },
+    {
+      "key": "T",
+      "name": "+Testing",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "a",
+          "name": "Run all tests",
+          "type": "command",
+          "command": "testing.runAll"
         },
         {
-          "key": "q",
-          "name": "Diagnostics",
+          "key": "f",
+          "name": "Run current file",
           "type": "command",
-          "command": "workbench.action.problems.focus"
+          "command": "testing.runCurrentFile"
+        },
+        {
+          "key": "c",
+          "name": "Run test at cursor",
+          "type": "command",
+          "command": "testing.runAtCursor"
+        },
+        {
+          "key": "l",
+          "name": "Re-run last",
+          "type": "command",
+          "command": "testing.reRunLastRun"
+        },
+        {
+          "key": "e",
+          "name": "Re-run failed",
+          "type": "command",
+          "command": "testing.reRunFailTests"
+        },
+        {
+          "key": "d",
+          "name": "Debug test at cursor",
+          "type": "command",
+          "command": "testing.debugAtCursor"
+        },
+        {
+          "key": "o",
+          "name": "Show most recent output",
+          "type": "command",
+          "command": "testing.showMostRecentOutput"
+        },
+        {
+          "key": "p",
+          "name": "Open output peek",
+          "type": "command",
+          "command": "testing.openOutputPeek"
         }
       ]
     },
@@ -585,6 +713,49 @@
       ]
     },
     {
+      "key": "x",
+      "name": "+Code",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "c",
+          "name": "Toggle line comment",
+          "type": "command",
+          "command": "editor.action.commentLine"
+        },
+        {
+          "key": "b",
+          "name": "Toggle block comment",
+          "type": "command",
+          "command": "editor.action.blockComment"
+        },
+        {
+          "key": "f",
+          "name": "Format selection",
+          "type": "command",
+          "command": "editor.action.formatSelection"
+        },
+        {
+          "key": "o",
+          "name": "Organize imports",
+          "type": "command",
+          "command": "editor.action.organizeImports"
+        },
+        {
+          "key": "a",
+          "name": "Insert line after",
+          "type": "command",
+          "command": "editor.action.insertLineAfter"
+        },
+        {
+          "key": "i",
+          "name": "Insert line before",
+          "type": "command",
+          "command": "editor.action.insertLineBefore"
+        }
+      ]
+    },
+    {
       "key": "p",
       "name": "+Project",
       "type": "bindings",
@@ -633,18 +804,6 @@
           "command": "workbench.action.closeWindow"
         },
         {
-          "key": "w",
-          "name": "Close editor",
-          "type": "command",
-          "command": "workbench.action.closeActiveEditor"
-        },
-        {
-          "key": "o",
-          "name": "Close other editors",
-          "type": "command",
-          "command": "workbench.action.closeOtherEditors"
-        },
-        {
           "key": "a",
           "name": "Close all editors",
           "type": "command",
@@ -670,28 +829,40 @@
           "command": "editor.action.startFindReplaceAction"
         },
         {
-          "key": "w",
-          "name": "Find in files",
-          "type": "command",
-          "command": "workbench.action.findInFiles"
-        },
-        {
-          "key": "W",
-          "name": "Replace in files",
+          "key": "P",
+          "name": "Replace in project",
           "type": "command",
           "command": "workbench.action.replaceInFiles"
         },
         {
-          "key": "b",
-          "name": "Search keybindings",
+          "key": "k",
+          "name": "Search keymaps",
           "type": "command",
           "command": "whichkey.searchBindings"
         },
         {
-          "key": "h",
+          "key": "c",
           "name": "Search commands",
           "type": "command",
           "command": "workbench.action.showCommands"
+        },
+        {
+          "key": "i",
+          "name": "Toggle case sensitivity",
+          "type": "command",
+          "command": "workbench.action.search.toggleCaseSensitive"
+        },
+        {
+          "key": "w",
+          "name": "Toggle whole word",
+          "type": "command",
+          "command": "workbench.action.search.toggleWholeWord"
+        },
+        {
+          "key": "x",
+          "name": "Toggle regex",
+          "type": "command",
+          "command": "workbench.action.search.toggleRegex"
         }
       ]
     },
@@ -796,6 +967,18 @@
           "name": "Toggle full screen",
           "type": "command",
           "command": "workbench.action.toggleFullScreen"
+        },
+        {
+          "key": "w",
+          "name": "Toggle word wrap",
+          "type": "command",
+          "command": "editor.action.toggleWordWrap"
+        },
+        {
+          "key": "n",
+          "name": "Toggle line numbers",
+          "type": "command",
+          "command": "editor.action.toggleLineNumbers"
         }
       ]
     },
@@ -823,8 +1006,8 @@
           "command": "workbench.view.scm"
         },
         {
-          "key": "r",
-          "name": "Run and debug view",
+          "key": "d",
+          "name": "Debug view",
           "type": "command",
           "command": "workbench.view.debug"
         },
@@ -917,7 +1100,7 @@
           "key": "o",
           "name": "Close other groups",
           "type": "command",
-          "command": "workbench.action.closeOtherEditors"
+          "command": "workbench.action.closeEditorsInOtherGroups"
         },
         {
           "key": "n",
@@ -930,6 +1113,24 @@
           "name": "Previous group",
           "type": "command",
           "command": "workbench.action.focusPreviousGroup"
+        },
+        {
+          "key": "m",
+          "name": "Maximize panel",
+          "type": "command",
+          "command": "workbench.action.toggleMaximizedPanel"
+        },
+        {
+          "key": "L",
+          "name": "Move editor right",
+          "type": "command",
+          "command": "workbench.action.moveEditorToNextGroup"
+        },
+        {
+          "key": "H",
+          "name": "Move editor left",
+          "type": "command",
+          "command": "workbench.action.moveEditorToPreviousGroup"
         }
       ]
     }
@@ -942,7 +1143,7 @@
   "workbench.preferredLightColorTheme": "Catppuccin Latte",
   "window.commandCenter": true,
   "projectManager.git.baseFolders": [
-    "/Users/slm.cassio/Developer"
+    "~/Developer"
   ],
   "terminal.integrated.defaultProfile.osx": "fish"
 }
