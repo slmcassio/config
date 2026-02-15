@@ -64,6 +64,12 @@
       "command": "workbench.action.quit"
     },
     {
+      "key": "q",
+      "name": "Close window",
+      "type": "command",
+      "command": "workbench.action.closeWindow"
+    },
+    {
       "key": "W",
       "name": "Save file as",
       "type": "command",
@@ -216,22 +222,10 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "a",
-          "name": "Close all buffers",
-          "type": "command",
-          "command": "workbench.action.closeAllEditors"
-        },
-        {
           "key": "b",
           "name": "List buffers",
           "type": "command",
           "command": "workbench.action.showAllEditors"
-        },
-        {
-          "key": "d",
-          "name": "Close buffer",
-          "type": "command",
-          "command": "workbench.action.closeActiveEditor"
         },
         {
           "key": "n",
@@ -240,16 +234,28 @@
           "command": "workbench.action.nextEditor"
         },
         {
+          "key": "p",
+          "name": "Previous buffer",
+          "type": "command",
+          "command": "workbench.action.previousEditor"
+        },
+        {
+          "key": "d",
+          "name": "Close buffer",
+          "type": "command",
+          "command": "workbench.action.closeActiveEditor"
+        },
+        {
           "key": "o",
           "name": "Close other buffers",
           "type": "command",
           "command": "workbench.action.closeOtherEditors"
         },
         {
-          "key": "p",
-          "name": "Previous buffer",
+          "key": "a",
+          "name": "Close all buffers",
           "type": "command",
-          "command": "workbench.action.previousEditor"
+          "command": "workbench.action.closeAllEditors"
         },
         {
           "key": "r",
@@ -277,12 +283,6 @@
           "command": "workbench.action.openRecent"
         },
         {
-          "key": "b",
-          "name": "List buffers",
-          "type": "command",
-          "command": "workbench.action.showAllEditors"
-        },
-        {
           "key": "o",
           "name": "Open file",
           "type": "command",
@@ -299,18 +299,6 @@
           "name": "Find words",
           "type": "command",
           "command": "search.action.openEditor"
-        },
-        {
-          "key": "s",
-          "name": "Go to symbol (file)",
-          "type": "command",
-          "command": "workbench.action.gotoSymbol"
-        },
-        {
-          "key": "S",
-          "name": "Go to symbol (workspace)",
-          "type": "command",
-          "command": "workbench.action.showAllSymbols"
         }
       ]
     },
@@ -320,10 +308,10 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "e",
-          "name": "Edit projects",
+          "key": "p",
+          "name": "List projects",
           "type": "command",
-          "command": "projectManager.editProjects"
+          "command": "projectManager.listProjects"
         },
         {
           "key": "n",
@@ -332,22 +320,22 @@
           "command": "projectManager.listProjectsNewWindow"
         },
         {
-          "key": "p",
-          "name": "List projects",
+          "key": "s",
+          "name": "Save project",
           "type": "command",
-          "command": "projectManager.listProjects"
+          "command": "projectManager.saveProject"
+        },
+        {
+          "key": "e",
+          "name": "Edit projects",
+          "type": "command",
+          "command": "projectManager.editProjects"
         },
         {
           "key": "r",
           "name": "Refresh projects",
           "type": "command",
           "command": "projectManager.refreshProjects"
-        },
-        {
-          "key": "s",
-          "name": "Save project",
-          "type": "command",
-          "command": "projectManager.saveProject"
         }
       ]
     },
@@ -357,22 +345,16 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "d",
-          "name": "Delete file",
-          "type": "command",
-          "command": "deleteFile"
-        },
-        {
           "key": "e",
           "name": "Focus explorer",
           "type": "command",
           "command": "workbench.files.action.focusFilesExplorer"
         },
         {
-          "key": "m",
-          "name": "Rename file",
+          "key": "r",
+          "name": "Reveal active file",
           "type": "command",
-          "command": "renameFile"
+          "command": "workbench.files.action.showActiveFileInExplorer"
         },
         {
           "key": "n",
@@ -387,10 +369,16 @@
           "command": "explorer.newFolder"
         },
         {
-          "key": "r",
-          "name": "Reveal active file",
+          "key": "m",
+          "name": "Rename file",
           "type": "command",
-          "command": "workbench.files.action.showActiveFileInExplorer"
+          "command": "renameFile"
+        },
+        {
+          "key": "d",
+          "name": "Delete file",
+          "type": "command",
+          "command": "deleteFile"
         },
         {
           "key": "t",
@@ -406,22 +394,10 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "c",
-          "name": "Search commands",
+          "key": "s",
+          "name": "Find in file",
           "type": "command",
-          "command": "workbench.action.showCommands"
-        },
-        {
-          "key": "i",
-          "name": "Toggle case sensitivity",
-          "type": "command",
-          "command": "workbench.action.search.toggleCaseSensitive"
-        },
-        {
-          "key": "k",
-          "name": "Search keymaps",
-          "type": "command",
-          "command": "whichkey.searchBindings"
+          "command": "actions.find"
         },
         {
           "key": "r",
@@ -430,10 +406,10 @@
           "command": "editor.action.startFindReplaceAction"
         },
         {
-          "key": "s",
-          "name": "Find in file",
+          "key": "i",
+          "name": "Toggle case sensitivity",
           "type": "command",
-          "command": "actions.find"
+          "command": "workbench.action.search.toggleCaseSensitive"
         },
         {
           "key": "w",
@@ -455,52 +431,16 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "b",
-          "name": "Checkout branch",
-          "type": "command",
-          "command": "git.checkout"
-        },
-        {
-          "key": "c",
-          "name": "Commit",
-          "type": "command",
-          "command": "git.commit"
-        },
-        {
-          "key": "d",
-          "name": "Open change",
-          "type": "command",
-          "command": "git.openChange"
-        },
-        {
-          "key": "f",
-          "name": "Fetch",
-          "type": "command",
-          "command": "git.fetch"
-        },
-        {
           "key": "g",
           "name": "Source control",
           "type": "command",
           "command": "workbench.view.scm"
         },
         {
-          "key": "l",
-          "name": "Pull",
+          "key": "d",
+          "name": "Open change",
           "type": "command",
-          "command": "git.pull"
-        },
-        {
-          "key": "n",
-          "name": "Create branch",
-          "type": "command",
-          "command": "git.createBranch"
-        },
-        {
-          "key": "p",
-          "name": "Push",
-          "type": "command",
-          "command": "git.push"
+          "command": "git.openChange"
         },
         {
           "key": "s",
@@ -525,6 +465,42 @@
           "name": "Unstage all",
           "type": "command",
           "command": "git.unstageAll"
+        },
+        {
+          "key": "c",
+          "name": "Commit",
+          "type": "command",
+          "command": "git.commit"
+        },
+        {
+          "key": "p",
+          "name": "Push",
+          "type": "command",
+          "command": "git.push"
+        },
+        {
+          "key": "f",
+          "name": "Fetch",
+          "type": "command",
+          "command": "git.fetch"
+        },
+        {
+          "key": "l",
+          "name": "Pull",
+          "type": "command",
+          "command": "git.pull"
+        },
+        {
+          "key": "b",
+          "name": "Checkout branch",
+          "type": "command",
+          "command": "git.checkout"
+        },
+        {
+          "key": "n",
+          "name": "Create branch",
+          "type": "command",
+          "command": "git.createBranch"
         }
       ]
     },
@@ -533,24 +509,6 @@
       "name": "+LSP",
       "type": "bindings",
       "bindings": [
-        {
-          "key": "a",
-          "name": "Code action",
-          "type": "command",
-          "command": "editor.action.quickFix"
-        },
-        {
-          "key": "d",
-          "name": "Diagnostics",
-          "type": "command",
-          "command": "workbench.action.problems.focus"
-        },
-        {
-          "key": "f",
-          "name": "Format document",
-          "type": "command",
-          "command": "editor.action.formatDocument"
-        },
         {
           "key": "h",
           "name": "Hover",
@@ -562,12 +520,6 @@
           "name": "Go to implementation",
           "type": "command",
           "command": "editor.action.goToImplementation"
-        },
-        {
-          "key": "r",
-          "name": "Rename",
-          "type": "command",
-          "command": "editor.action.rename"
         },
         {
           "key": "R",
@@ -592,6 +544,30 @@
           "name": "Go to type definition",
           "type": "command",
           "command": "editor.action.goToTypeDefinition"
+        },
+        {
+          "key": "a",
+          "name": "Code action",
+          "type": "command",
+          "command": "editor.action.quickFix"
+        },
+        {
+          "key": "f",
+          "name": "Format document",
+          "type": "command",
+          "command": "editor.action.formatDocument"
+        },
+        {
+          "key": "r",
+          "name": "Rename",
+          "type": "command",
+          "command": "editor.action.rename"
+        },
+        {
+          "key": "d",
+          "name": "Diagnostics",
+          "type": "command",
+          "command": "workbench.action.problems.focus"
         }
       ]
     },
@@ -601,16 +577,28 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "b",
-          "name": "Toggle breakpoint",
+          "key": "s",
+          "name": "Start debug",
           "type": "command",
-          "command": "debug.toggleBreakpoint"
+          "command": "workbench.action.debug.start"
         },
         {
           "key": "c",
           "name": "Continue",
           "type": "command",
           "command": "workbench.action.debug.continue"
+        },
+        {
+          "key": "r",
+          "name": "Restart",
+          "type": "command",
+          "command": "workbench.action.debug.restart"
+        },
+        {
+          "key": "x",
+          "name": "Stop",
+          "type": "command",
+          "command": "workbench.action.debug.stop"
         },
         {
           "key": "i",
@@ -625,28 +613,16 @@
           "command": "workbench.action.debug.stepOver"
         },
         {
-          "key": "r",
-          "name": "Restart",
-          "type": "command",
-          "command": "workbench.action.debug.restart"
-        },
-        {
-          "key": "s",
-          "name": "Start debug",
-          "type": "command",
-          "command": "workbench.action.debug.start"
-        },
-        {
           "key": "u",
           "name": "Step out",
           "type": "command",
           "command": "workbench.action.debug.stepOut"
         },
         {
-          "key": "x",
-          "name": "Stop",
+          "key": "b",
+          "name": "Toggle breakpoint",
           "type": "command",
-          "command": "workbench.action.debug.stop"
+          "command": "debug.toggleBreakpoint"
         }
       ]
     },
@@ -656,28 +632,10 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "a",
-          "name": "Run all tests",
-          "type": "command",
-          "command": "testing.runAll"
-        },
-        {
           "key": "c",
           "name": "Run test at cursor",
           "type": "command",
           "command": "testing.runAtCursor"
-        },
-        {
-          "key": "d",
-          "name": "Debug test at cursor",
-          "type": "command",
-          "command": "testing.debugAtCursor"
-        },
-        {
-          "key": "e",
-          "name": "Re-run failed",
-          "type": "command",
-          "command": "testing.reRunFailTests"
         },
         {
           "key": "f",
@@ -686,10 +644,28 @@
           "command": "testing.runCurrentFile"
         },
         {
+          "key": "a",
+          "name": "Run all tests",
+          "type": "command",
+          "command": "testing.runAll"
+        },
+        {
           "key": "l",
           "name": "Re-run last",
           "type": "command",
           "command": "testing.reRunLastRun"
+        },
+        {
+          "key": "e",
+          "name": "Re-run failed",
+          "type": "command",
+          "command": "testing.reRunFailTests"
+        },
+        {
+          "key": "d",
+          "name": "Debug test at cursor",
+          "type": "command",
+          "command": "testing.debugAtCursor"
         },
         {
           "key": "o",
@@ -877,10 +853,10 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "a",
-          "name": "Insert line after",
+          "key": "c",
+          "name": "Toggle line comment",
           "type": "command",
-          "command": "editor.action.insertLineAfter"
+          "command": "editor.action.commentLine"
         },
         {
           "key": "b",
@@ -889,22 +865,22 @@
           "command": "editor.action.blockComment"
         },
         {
-          "key": "c",
-          "name": "Toggle line comment",
+          "key": "a",
+          "name": "Insert line after",
           "type": "command",
-          "command": "editor.action.commentLine"
-        },
-        {
-          "key": "f",
-          "name": "Format selection",
-          "type": "command",
-          "command": "editor.action.formatSelection"
+          "command": "editor.action.insertLineAfter"
         },
         {
           "key": "i",
           "name": "Insert line before",
           "type": "command",
           "command": "editor.action.insertLineBefore"
+        },
+        {
+          "key": "f",
+          "name": "Format selection",
+          "type": "command",
+          "command": "editor.action.formatSelection"
         },
         {
           "key": "o",
@@ -920,22 +896,16 @@
       "type": "bindings",
       "bindings": [
         {
+          "key": "t",
+          "name": "Toggle terminal",
+          "type": "command",
+          "command": "workbench.action.togglePanel"
+        },
+        {
           "key": "f",
           "name": "Focus terminal",
           "type": "command",
           "command": "workbench.action.terminal.focus"
-        },
-        {
-          "key": "k",
-          "name": "Kill terminal",
-          "type": "command",
-          "command": "workbench.action.terminal.kill"
-        },
-        {
-          "key": "n",
-          "name": "New terminal",
-          "type": "command",
-          "command": "workbench.action.terminal.new"
         },
         {
           "key": "N",
@@ -950,10 +920,10 @@
           "command": "workbench.action.terminal.focusPrevious"
         },
         {
-          "key": "r",
-          "name": "Run recent command",
+          "key": "n",
+          "name": "New terminal",
           "type": "command",
-          "command": "workbench.action.terminal.runRecentCommand"
+          "command": "workbench.action.terminal.new"
         },
         {
           "key": "s",
@@ -962,29 +932,16 @@
           "command": "workbench.action.terminal.split"
         },
         {
-          "key": "t",
-          "name": "Toggle terminal",
+          "key": "r",
+          "name": "Run recent command",
           "type": "command",
-          "command": "workbench.action.togglePanel"
-        }
-      ]
-    },
-    {
-      "key": "q",
-      "name": "+Quit",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "a",
-          "name": "Close all editors",
-          "type": "command",
-          "command": "workbench.action.closeAllEditors"
+          "command": "workbench.action.terminal.runRecentCommand"
         },
         {
-          "key": "q",
-          "name": "Close window",
+          "key": "k",
+          "name": "Kill terminal",
           "type": "command",
-          "command": "workbench.action.closeWindow"
+          "command": "workbench.action.terminal.kill"
         }
       ]
     },
@@ -1024,18 +981,6 @@
           "command": "editor.action.toggleLineNumbers"
         },
         {
-          "key": "p",
-          "name": "Toggle panel",
-          "type": "command",
-          "command": "workbench.action.togglePanel"
-        },
-        {
-          "key": "s",
-          "name": "Toggle sidebar",
-          "type": "command",
-          "command": "workbench.action.toggleSidebarVisibility"
-        },
-        {
           "key": "w",
           "name": "Toggle word wrap",
           "type": "command",
@@ -1055,10 +1000,10 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "c",
-          "name": "Debug console",
+          "key": "e",
+          "name": "Explorer view",
           "type": "command",
-          "command": "workbench.action.debug.console.focus"
+          "command": "workbench.view.explorer"
         },
         {
           "key": "d",
@@ -1067,16 +1012,16 @@
           "command": "workbench.view.debug"
         },
         {
-          "key": "e",
-          "name": "Explorer view",
+          "key": "t",
+          "name": "Testing view",
           "type": "command",
-          "command": "workbench.view.explorer"
+          "command": "workbench.view.extension.test"
         },
         {
-          "key": "g",
-          "name": "Source control view",
+          "key": "x",
+          "name": "Extensions view",
           "type": "command",
-          "command": "workbench.view.scm"
+          "command": "workbench.view.extensions"
         },
         {
           "key": "o",
@@ -1085,28 +1030,10 @@
           "command": "workbench.action.output.toggleOutput"
         },
         {
-          "key": "p",
-          "name": "Problems view",
+          "key": "c",
+          "name": "Debug console",
           "type": "command",
-          "command": "workbench.action.problems.focus"
-        },
-        {
-          "key": "t",
-          "name": "Testing view",
-          "type": "command",
-          "command": "workbench.view.extension.test"
-        },
-        {
-          "key": "T",
-          "name": "Terminal panel",
-          "type": "command",
-          "command": "workbench.action.terminal.focus"
-        },
-        {
-          "key": "x",
-          "name": "Extensions view",
-          "type": "command",
-          "command": "workbench.view.extensions"
+          "command": "workbench.action.debug.console.focus"
         }
       ]
     },
@@ -1116,22 +1043,10 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "c",
-          "name": "Close group",
-          "type": "command",
-          "command": "workbench.action.closeEditorsInGroup"
-        },
-        {
           "key": "h",
           "name": "Focus left",
           "type": "command",
           "command": "workbench.action.focusLeftGroup"
-        },
-        {
-          "key": "H",
-          "name": "Move editor left",
-          "type": "command",
-          "command": "workbench.action.moveEditorToPreviousGroup"
         },
         {
           "key": "j",
@@ -1152,34 +1067,28 @@
           "command": "workbench.action.focusRightGroup"
         },
         {
-          "key": "L",
-          "name": "Move editor right",
-          "type": "command",
-          "command": "workbench.action.moveEditorToNextGroup"
-        },
-        {
-          "key": "m",
-          "name": "Maximize panel",
-          "type": "command",
-          "command": "workbench.action.toggleMaximizedPanel"
-        },
-        {
           "key": "n",
           "name": "Next group",
           "type": "command",
           "command": "workbench.action.focusNextGroup"
         },
         {
-          "key": "o",
-          "name": "Close other groups",
-          "type": "command",
-          "command": "workbench.action.closeEditorsInOtherGroups"
-        },
-        {
           "key": "p",
           "name": "Previous group",
           "type": "command",
           "command": "workbench.action.focusPreviousGroup"
+        },
+        {
+          "key": "H",
+          "name": "Move editor left",
+          "type": "command",
+          "command": "workbench.action.moveEditorToPreviousGroup"
+        },
+        {
+          "key": "L",
+          "name": "Move editor right",
+          "type": "command",
+          "command": "workbench.action.moveEditorToNextGroup"
         },
         {
           "key": "s",
@@ -1192,6 +1101,24 @@
           "name": "Split right",
           "type": "command",
           "command": "workbench.action.splitEditorRight"
+        },
+        {
+          "key": "m",
+          "name": "Maximize panel",
+          "type": "command",
+          "command": "workbench.action.toggleMaximizedPanel"
+        },
+        {
+          "key": "c",
+          "name": "Close group",
+          "type": "command",
+          "command": "workbench.action.closeEditorsInGroup"
+        },
+        {
+          "key": "o",
+          "name": "Close other groups",
+          "type": "command",
+          "command": "workbench.action.closeEditorsInOtherGroups"
         }
       ]
     }
