@@ -298,7 +298,7 @@
           "key": "w",
           "name": "Find words",
           "type": "command",
-          "command": "workbench.action.findInFiles"
+          "command": "search.action.openEditor"
         },
         {
           "key": "s",
@@ -422,12 +422,6 @@
           "name": "Search keymaps",
           "type": "command",
           "command": "whichkey.searchBindings"
-        },
-        {
-          "key": "P",
-          "name": "Replace in project",
-          "type": "command",
-          "command": "workbench.action.replaceInFiles"
         },
         {
           "key": "r",
@@ -1095,12 +1089,6 @@
           "name": "Problems view",
           "type": "command",
           "command": "workbench.action.problems.focus"
-        },
-        {
-          "key": "s",
-          "name": "Search view",
-          "type": "command",
-          "command": "workbench.view.search"
         },
         {
           "key": "t",

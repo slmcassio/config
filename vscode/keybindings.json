@@ -34,6 +34,21 @@
     "when": "(focusedView =~ /^workbench\\.panel\\.aichat\\.view/ || activeEditor == 'workbench.editor.composer' || composerFocused || webviewHasFocus) && !whichkeyActive"
   },
   {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "listFocus && referenceSearchVisible && !inputFocus"
+  },
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "listFocus && referenceSearchVisible && !inputFocus"
+  },
+  {
+    "key": "enter",
+    "command": "list.select",
+    "when": "listFocus && referenceSearchVisible && !inputFocus"
+  },
+  {
     "key": "cmd+w",
     "command": "workbench.action.closeActiveEditor"
   },
@@ -153,6 +168,51 @@
   },
   {
     "key": "escape",
+    "command": "closeFindWidget",
+    "when": "editorFocus && findWidgetVisible && !isComposing"
+  },
+  {
+    "key": "enter",
+    "command": "editor.action.nextMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "enter",
+    "command": "editor.action.replaceOne",
+    "when": "editorFocus && findWidgetVisible && replaceInputFocussed"
+  },
+  {
+    "key": "shift+enter",
+    "command": "editor.action.previousMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "alt+cmd+enter",
+    "command": "editor.action.replaceAll",
+    "when": "editorFocus && findWidgetVisible"
+  },
+  {
+    "key": "alt+enter",
+    "command": "editor.action.selectAllMatches",
+    "when": "editorFocus && findWidgetVisible"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.terminal.hideFind",
+    "when": "terminalFindVisible && terminalFocusInAny && terminalHasBeenCreated || terminalFindVisible && terminalFocusInAny && terminalProcessSupported"
+  },
+  {
+    "key": "escape",
+    "command": "composer.find.hide",
+    "when": "composerFindWidgetFocused"
+  },
+  {
+    "key": "escape",
+    "command": "editor.action.webvieweditor.hideFind",
+    "when": "webviewFindWidgetVisible && !editorFocus && activeEditor == 'WebviewEditor'"
+  },
+  {
+    "key": "escape",
     "command": "cancelSelection",
     "when": "editorHasSelection && textInputFocus"
   },
@@ -170,6 +230,16 @@
     "key": "escape",
     "command": "extension.vim_escape",
     "when": "editorTextFocus && vim.active && !inDebugRepl"
+  },
+  {
+    "key": "escape",
+    "command": "search.focus.previousInputBox",
+    "when": "inSearchEditor && searchInputBoxFocus"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "filesExplorerFocus && foldersViewVisible && !inputFocus"
   },
   {
     "key": "cmd+z",
