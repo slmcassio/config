@@ -1,0 +1,57 @@
+# macOS system files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Fish shell
+fish/fish_history
+fish/.fish_history
+fish/fish_variables
+fish/completions/
+fish/conf.d/sdk.fish
+fish/functions/fisher.fish
+fish/functions/sdk.fish
+fish/functions/__sdkman-noexport-init.sh
+fish/functions/nvm.fish
+fish/functions/_nvm_*.fish
+
+# Clojure
+clojure/.cpcache/*
+
+# Logs and temporary files
+*.log
+*.tmp
+*.cache
+*.pid
+*.lock
+*.backup
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment and secrets
+.env
+.env.*
+*.env
+*.env.*
+
+# Private keys and certificates
+*.pem
+*.key
+*.der
+*.csr
+*.crt
+*.cer
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.mobileprovision
