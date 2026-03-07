@@ -1,0 +1,1668 @@
+{
+  "breadcrumbs.enabled": false,
+  "editor.tabFocusMode": false,
+  "editor.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "editor.fontLigatures": true,
+  "editor.formatOnSave": false,
+  "editor.gotoLocation.alternativeDeclarationCommand": "",
+  "editor.gotoLocation.alternativeDefinitionCommand": "",
+  "editor.gotoLocation.alternativeTypeDefinitionCommand": "",
+  "editor.lineNumbers": "relative",
+  "editor.cursorSurroundingLines": 8,
+  "editor.minimap.enabled": false,
+  "git.path": "/usr/bin/git",
+  "vim.enableNeovim": true,
+  "vim.highlightedyank.duration": 700,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(245, 194, 231, 0.3)",
+  "vim.highlightedyank.textColor": "#45475a",
+  "vim.neovimPath": "/opt/homebrew/bin/nvim",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<C-Space>"
+      ],
+      "commands": [
+        "vspacecode.space"
+      ]
+    },
+    {
+      "before": [
+        "<Space>"
+      ],
+      "commands": [
+        "vspacecode.space"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "h"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "i"
+      ],
+      "commands": [
+        "editor.action.goToImplementation"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "editor.action.goToReferences"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "R"
+      ],
+      "commands": [
+        "editor.action.rename"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "f"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "F"
+      ],
+      "commands": [
+        "editor.action.formatSelection"
+      ]
+    },
+    {
+      "before": [
+        ","
+      ],
+      "commands": [
+        "vspacecode.space",
+        {
+          "command": "whichkey.triggerKey",
+          "args": ","
+        }
+      ]
+    },
+    {
+      "before": [
+        ";"
+      ],
+      "commands": [
+        "vspacecode.space",
+        {
+          "command": "whichkey.triggerKey",
+          "args": ";"
+        }
+      ]
+    },
+    {
+      "before": [
+        "m",
+        "j"
+      ],
+      "commands": [
+        "editor.action.insertCursorBelow"
+      ]
+    },
+    {
+      "before": [
+        "m",
+        "k"
+      ],
+      "commands": [
+        "editor.action.insertCursorAbove"
+      ]
+    },
+    {
+      "before": [
+        "m",
+        "J"
+      ],
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch"
+      ]
+    },
+    {
+      "before": [
+        "m",
+        "K"
+      ],
+      "commands": [
+        "editor.action.addSelectionToPreviousFindMatch"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "s"
+      ],
+      "commands": [
+        "paredit.slurpSexpForward"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "S"
+      ],
+      "commands": [
+        "paredit.slurpSexpBackward"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "b"
+      ],
+      "commands": [
+        "paredit.barfSexpForward"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "B"
+      ],
+      "commands": [
+        "paredit.barfSexpBackward"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "r"
+      ],
+      "commands": [
+        "paredit.raiseSexp"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "x"
+      ],
+      "commands": [
+        "paredit.spliceSexp"
+      ]
+    },
+    {
+      "before": [
+        "m",
+        "c"
+      ],
+      "commands": [
+        "editor.action.commentLine"
+      ]
+    },
+    {
+      "before": [
+        "m",
+        "C"
+      ],
+      "commands": [
+        "editor.action.blockComment"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<C-Space>"
+      ],
+      "commands": [
+        "vspacecode.space"
+      ]
+    },
+    {
+      "before": [
+        "<Space>"
+      ],
+      "commands": [
+        "vspacecode.space"
+      ]
+    },
+    {
+      "before": [
+        ","
+      ],
+      "commands": [
+        "vspacecode.space",
+        {
+          "command": "whichkey.triggerKey",
+          "args": ","
+        }
+      ]
+    },
+    {
+      "before": [
+        ";"
+      ],
+      "commands": [
+        "vspacecode.space",
+        {
+          "command": "whichkey.triggerKey",
+          "args": ";"
+        }
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "f"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "F"
+      ],
+      "commands": [
+        "editor.action.formatSelection"
+      ]
+    },
+    {
+      "before": [
+        "m",
+        "j"
+      ],
+      "commands": [
+        "editor.action.insertCursorBelow"
+      ]
+    },
+    {
+      "before": [
+        "m",
+        "k"
+      ],
+      "commands": [
+        "editor.action.insertCursorAbove"
+      ]
+    },
+    {
+      "before": [
+        "m",
+        "J"
+      ],
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch"
+      ]
+    },
+    {
+      "before": [
+        "m",
+        "K"
+      ],
+      "commands": [
+        "editor.action.addSelectionToPreviousFindMatch"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "s"
+      ],
+      "commands": [
+        "paredit.slurpSexpForward"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "S"
+      ],
+      "commands": [
+        "paredit.slurpSexpBackward"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "b"
+      ],
+      "commands": [
+        "paredit.barfSexpForward"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "B"
+      ],
+      "commands": [
+        "paredit.barfSexpBackward"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "r"
+      ],
+      "commands": [
+        "paredit.raiseSexp"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "x"
+      ],
+      "commands": [
+        "paredit.spliceSexp"
+      ]
+    },
+    {
+      "before": [
+        "m",
+        "c"
+      ],
+      "commands": [
+        "editor.action.commentLine"
+      ]
+    },
+    {
+      "before": [
+        "m",
+        "C"
+      ],
+      "commands": [
+        "editor.action.blockComment"
+      ]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+  "vspacecode.bindings": [
+    {
+      "key": " ",
+      "name": "Command palette",
+      "type": "command",
+      "command": "workbench.action.showCommands"
+    },
+    {
+      "key": "/",
+      "name": "Search Editor",
+      "type": "command",
+      "command": "search.action.openEditor"
+    },
+    {
+      "key": "?",
+      "name": "Search keybindings",
+      "type": "command",
+      "command": "whichkey.searchBindings"
+    },
+    {
+      "key": "Q",
+      "name": "Quit Cursor",
+      "type": "command",
+      "command": "workbench.action.quit"
+    },
+    {
+      "key": "q",
+      "name": "Close window",
+      "type": "command",
+      "command": "workbench.action.closeWindow"
+    },
+    {
+      "key": "w",
+      "name": "Save file",
+      "type": "command",
+      "command": "workbench.action.files.save"
+    },
+    {
+      "key": "W",
+      "name": "Save file as",
+      "type": "command",
+      "command": "workbench.action.files.saveAs"
+    },
+    {
+      "key": ";",
+      "name": "+Cursor [;]",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "c",
+          "name": "Chat",
+          "type": "command",
+          "command": "composer.startComposerPrompt"
+        },
+        {
+          "key": "n",
+          "name": "New chat",
+          "type": "command",
+          "command": "composer.createNewWithPrevContext"
+        },
+        {
+          "key": "N",
+          "name": "New chat tab",
+          "type": "command",
+          "command": "composer.createNewComposerTab"
+        },
+        {
+          "key": "e",
+          "name": "+Edits",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "a",
+              "name": "Accept all diffs [cmd+enter]",
+              "type": "command",
+              "command": "editor.action.inlineDiffs.acceptAll"
+            },
+            {
+              "key": "y",
+              "name": "Accept partial edit [cmd+y]",
+              "type": "command",
+              "command": "editor.action.inlineDiffs.acceptPartialEdit"
+            },
+            {
+              "key": "A",
+              "name": "Accept all files (chat) [cmd+enter]",
+              "type": "command",
+              "command": "chatEditing.acceptAllFiles"
+            },
+            {
+              "key": "p",
+              "name": "Reject partial edit [cmd+n]",
+              "type": "command",
+              "command": "editor.action.inlineDiffs.rejectPartialEdit"
+            },
+            {
+              "key": "r",
+              "name": "Reject all diffs [cmd+backspace]",
+              "type": "command",
+              "command": "editor.action.inlineDiffs.rejectAll"
+            },
+            {
+              "key": "R",
+              "name": "Reject all across editors [cmd+ctrl]",
+              "type": "command",
+              "command": "editor.action.inlineDiffs.rejectAllAcrossAllEditors"
+            },
+            {
+              "key": "d",
+              "name": "Discard all files (chat) [cmd+backspace]",
+              "type": "command",
+              "command": "chatEditing.discardAllFiles"
+            },
+            {
+              "key": "j",
+              "name": "Next inline diff [alt+j]",
+              "type": "command",
+              "command": "editor.action.inlineDiffs.nextChange"
+            },
+            {
+              "key": "k",
+              "name": "Previous inline diff [alt+k]",
+              "type": "command",
+              "command": "editor.action.inlineDiffs.previousChange"
+            },
+            {
+              "key": "m",
+              "name": "Composer mode menu [cmd+.]",
+              "type": "command",
+              "command": "composer.openModeMenu"
+            },
+            {
+              "key": "M",
+              "name": "Model toggle [cmd+/]",
+              "type": "command",
+              "command": "composer.openModelToggle"
+            }
+          ]
+        },
+        {
+          "key": "t",
+          "name": "Toggle menu",
+          "type": "command",
+          "command": "workbench.action.toggleAuxiliaryBar"
+        },
+        {
+          "key": "S",
+          "name": "Cursor settings",
+          "type": "command",
+          "command": "aiSettings.action.open"
+        }
+      ]
+    },
+    {
+      "key": ",",
+      "name": "+Local [,]",
+      "type": "conditional",
+      "bindings": [
+        {
+          "key": "languageId:clojure",
+          "name": "Clojure (Calva)",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "e",
+              "name": "+Eval",
+              "type": "bindings",
+              "bindings": [
+                {
+                  "key": "c",
+                  "name": "Eval form (cursor)",
+                  "type": "command",
+                  "command": "calva.evaluateEnclosingForm"
+                },
+                {
+                  "key": "t",
+                  "name": "Eval top-level form",
+                  "type": "command",
+                  "command": "calva.evaluateCurrentTopLevelForm"
+                },
+                {
+                  "key": "s",
+                  "name": "Eval selection",
+                  "type": "command",
+                  "command": "calva.evaluateSelection"
+                },
+                {
+                  "key": "l",
+                  "name": "Load/eval file",
+                  "type": "command",
+                  "command": "calva.loadFile"
+                },
+                {
+                  "key": "r",
+                  "name": "Refresh changed namespaces",
+                  "type": "command",
+                  "command": "calva.refresh"
+                },
+                {
+                  "key": "a",
+                  "name": "Refresh all namespaces",
+                  "type": "command",
+                  "command": "calva.refreshAll"
+                },
+                {
+                  "key": "w",
+                  "name": "Replace with eval result",
+                  "type": "command",
+                  "command": "calva.evaluateSelectionReplace"
+                }
+              ]
+            },
+            {
+              "key": "r",
+              "name": "+REPL",
+              "type": "bindings",
+              "bindings": [
+                {
+                  "key": "j",
+                  "name": "Jack-in",
+                  "type": "command",
+                  "command": "calva.jackIn"
+                },
+                {
+                  "key": "c",
+                  "name": "Connect",
+                  "type": "command",
+                  "command": "calva.connect"
+                },
+                {
+                  "key": "d",
+                  "name": "Disconnect",
+                  "type": "command",
+                  "command": "calva.disconnect"
+                },
+                {
+                  "key": "i",
+                  "name": "Interrupt evaluation",
+                  "type": "command",
+                  "command": "calva.interruptAllEvaluations"
+                },
+                {
+                  "key": "s",
+                  "name": "Select REPL window session",
+                  "type": "command",
+                  "command": "calva.selectReplWindowSession"
+                },
+                {
+                  "key": "w",
+                  "name": "Show REPL window",
+                  "type": "command",
+                  "command": "calva.showReplWindow"
+                }
+              ]
+            },
+            {
+              "key": "t",
+              "name": "+Test",
+              "type": "bindings",
+              "bindings": [
+                {
+                  "key": "n",
+                  "name": "Run tests (namespace)",
+                  "type": "command",
+                  "command": "calva.runNamespaceTests"
+                },
+                {
+                  "key": "t",
+                  "name": "Run test (cursor)",
+                  "type": "command",
+                  "command": "calva.runTestUnderCursor"
+                },
+                {
+                  "key": "a",
+                  "name": "Run all tests",
+                  "type": "command",
+                  "command": "calva.runAllTests"
+                },
+                {
+                  "key": "f",
+                  "name": "Run failing tests",
+                  "type": "command",
+                  "command": "calva.rerunTests"
+                },
+                {
+                  "key": "l",
+                  "name": "Load/eval test file",
+                  "type": "command",
+                  "command": "calva.loadTestFileForCurrentNamespace"
+                },
+                {
+                  "key": "g",
+                  "name": "Toggle impl <-> test",
+                  "type": "command",
+                  "command": "calva.toggleBetweenImplAndTest"
+                }
+              ]
+            },
+            {
+              "key": "p",
+              "name": "+Paredit",
+              "type": "bindings",
+              "bindings": [
+                {
+                  "key": "s",
+                  "name": "Slurp forward [zs]",
+                  "type": "command",
+                  "command": "paredit.slurpSexpForward"
+                },
+                {
+                  "key": "S",
+                  "name": "Slurp backward [zS]",
+                  "type": "command",
+                  "command": "paredit.slurpSexpBackward"
+                },
+                {
+                  "key": "b",
+                  "name": "Barf forward [zb]",
+                  "type": "command",
+                  "command": "paredit.barfSexpForward"
+                },
+                {
+                  "key": "B",
+                  "name": "Barf backward [zB]",
+                  "type": "command",
+                  "command": "paredit.barfSexpBackward"
+                },
+                {
+                  "key": "x",
+                  "name": "Splice form [zx]",
+                  "type": "command",
+                  "command": "paredit.spliceSexp"
+                },
+                {
+                  "key": "r",
+                  "name": "Raise form [zr]",
+                  "type": "command",
+                  "command": "paredit.raiseSexp"
+                },
+                {
+                  "key": "t",
+                  "name": "Toggle paredit mode",
+                  "type": "command",
+                  "command": "paredit.togglemode"
+                },
+                {
+                  "key": "w",
+                  "name": "+Wrap/Rewrap",
+                  "type": "bindings",
+                  "bindings": [
+                    {
+                      "key": "(",
+                      "name": "Wrap ()",
+                      "type": "command",
+                      "command": "paredit.wrapAroundParens"
+                    },
+                    {
+                      "key": "[",
+                      "name": "Wrap []",
+                      "type": "command",
+                      "command": "paredit.wrapAroundSquare"
+                    },
+                    {
+                      "key": "{",
+                      "name": "Wrap {}",
+                      "type": "command",
+                      "command": "paredit.wrapAroundCurly"
+                    },
+                    {
+                      "key": "\"",
+                      "name": "Wrap \"\"",
+                      "type": "command",
+                      "command": "paredit.wrapAroundQuote"
+                    },
+                    {
+                      "key": "p",
+                      "name": "Rewrap ()",
+                      "type": "command",
+                      "command": "paredit.rewrapParens"
+                    },
+                    {
+                      "key": "s",
+                      "name": "Rewrap []",
+                      "type": "command",
+                      "command": "paredit.rewrapSquare"
+                    },
+                    {
+                      "key": "c",
+                      "name": "Rewrap {}",
+                      "type": "command",
+                      "command": "paredit.rewrapCurly"
+                    },
+                    {
+                      "key": "q",
+                      "name": "Rewrap \"\"",
+                      "type": "command",
+                      "command": "paredit.rewrapQuote"
+                    }
+                  ]
+                },
+                {
+                  "key": "d",
+                  "name": "+Drag forms",
+                  "type": "bindings",
+                  "bindings": [
+                    {
+                      "key": "h",
+                      "name": "Drag backward",
+                      "type": "command",
+                      "command": "paredit.dragSexprBackward"
+                    },
+                    {
+                      "key": "l",
+                      "name": "Drag forward",
+                      "type": "command",
+                      "command": "paredit.dragSexprForward"
+                    },
+                    {
+                      "key": "H",
+                      "name": "Drag backward up",
+                      "type": "command",
+                      "command": "paredit.dragSexprBackwardUp"
+                    },
+                    {
+                      "key": "L",
+                      "name": "Drag forward up",
+                      "type": "command",
+                      "command": "paredit.dragSexprForwardUp"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "key": "o",
+              "name": "+Output/UI",
+              "type": "bindings",
+              "bindings": [
+                {
+                  "key": "r",
+                  "name": "Show REPL window",
+                  "type": "command",
+                  "command": "calva.showReplWindow"
+                },
+                {
+                  "key": "o",
+                  "name": "Show output destination",
+                  "type": "command",
+                  "command": "calva.showResultOutputDestination"
+                },
+                {
+                  "key": "t",
+                  "name": "Show output terminal",
+                  "type": "command",
+                  "command": "calva.showOutputTerminal"
+                },
+                {
+                  "key": "p",
+                  "name": "Toggle pretty print",
+                  "type": "command",
+                  "command": "calva.togglePrettyPrint"
+                },
+                {
+                  "key": "c",
+                  "name": "Clear inline results",
+                  "type": "command",
+                  "command": "calva.clearInlineResults"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "",
+          "name": "No major mode",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "?",
+              "name": "Command palette",
+              "type": "command",
+              "command": "workbench.action.showCommands"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "l",
+      "name": "+LSP",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "l",
+          "name": "Code action",
+          "type": "command",
+          "command": "editor.action.quickFix"
+        },
+        {
+          "key": "d",
+          "name": "Go to definition [gd]",
+          "type": "command",
+          "command": "editor.action.revealDefinition"
+        },
+        {
+          "key": "i",
+          "name": "Go to implementation [gi]",
+          "type": "command",
+          "command": "editor.action.goToImplementation"
+        },
+        {
+          "key": "r",
+          "name": "Show references [gr]",
+          "type": "command",
+          "command": "editor.action.goToReferences"
+        },
+        {
+          "key": "R",
+          "name": "Rename [gR]",
+          "type": "command",
+          "command": "editor.action.rename"
+        },
+        {
+          "key": "h",
+          "name": "Hover [gh]",
+          "type": "command",
+          "command": "editor.action.showHover"
+        },
+        {
+          "key": "s",
+          "name": "Document symbols",
+          "type": "command",
+          "command": "workbench.action.gotoSymbol"
+        },
+        {
+          "key": "S",
+          "name": "Workspace symbols",
+          "type": "command",
+          "command": "workbench.action.showAllSymbols"
+        },
+        {
+          "key": "f",
+          "name": "Format document [gf]",
+          "type": "command",
+          "command": "editor.action.formatDocument"
+        },
+        {
+          "key": "F",
+          "name": "Format selection [gF]",
+          "type": "command",
+          "command": "editor.action.formatSelection"
+        },
+        {
+          "key": "o",
+          "name": "Organize imports",
+          "type": "command",
+          "command": "editor.action.organizeImports"
+        },
+        {
+          "key": "D",
+          "name": "Diagnostics",
+          "type": "command",
+          "command": "workbench.action.problems.focus"
+        }
+      ]
+    },
+    {
+      "key": "b",
+      "name": "+Buffers",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "b",
+          "name": "List buffers",
+          "type": "command",
+          "command": "workbench.action.showAllEditors"
+        },
+        {
+          "key": "n",
+          "name": "Next buffer [ctrl+tab]",
+          "type": "command",
+          "command": "workbench.action.nextEditor"
+        },
+        {
+          "key": "p",
+          "name": "Previous buffer [ctrl+shift+tab]",
+          "type": "command",
+          "command": "workbench.action.previousEditor"
+        },
+        {
+          "key": "d",
+          "name": "Close buffer [cmd+w]",
+          "type": "command",
+          "command": "workbench.action.closeActiveEditor"
+        },
+        {
+          "key": "o",
+          "name": "Close other buffers",
+          "type": "command",
+          "command": "workbench.action.closeOtherEditors"
+        },
+        {
+          "key": "a",
+          "name": "Close all buffers",
+          "type": "command",
+          "command": "workbench.action.closeAllEditors"
+        },
+        {
+          "key": "r",
+          "name": "Reopen closed buffer",
+          "type": "command",
+          "command": "workbench.action.reopenClosedEditor"
+        }
+      ]
+    },
+    {
+      "key": "f",
+      "name": "+Find",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "f",
+          "name": "Find files",
+          "type": "command",
+          "command": "workbench.action.quickOpen"
+        },
+        {
+          "key": "w",
+          "name": "Find words",
+          "type": "command",
+          "command": "search.action.openEditor"
+        },
+        {
+          "key": "l",
+          "name": "Local file search",
+          "type": "command",
+          "command": "actions.find"
+        },
+        {
+          "key": "r",
+          "name": "Replace in local file",
+          "type": "command",
+          "command": "editor.action.startFindReplaceAction"
+        }
+      ]
+    },
+    {
+      "key": "p",
+      "name": "+Project",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "p",
+          "name": "List projects",
+          "type": "command",
+          "command": "projectManager.listProjects"
+        },
+        {
+          "key": "P",
+          "name": "List projects (new window)",
+          "type": "command",
+          "command": "projectManager.listProjectsNewWindow"
+        },
+        {
+          "key": "s",
+          "name": "Save project",
+          "type": "command",
+          "command": "projectManager.saveProject"
+        },
+        {
+          "key": "e",
+          "name": "Edit projects",
+          "type": "command",
+          "command": "projectManager.editProjects"
+        },
+        {
+          "key": "r",
+          "name": "Refresh projects",
+          "type": "command",
+          "command": "projectManager.refreshProjects"
+        }
+      ]
+    },
+    {
+      "key": "e",
+      "name": "+Explorer",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "e",
+          "name": "Focus explorer",
+          "type": "command",
+          "command": "workbench.files.action.focusFilesExplorer"
+        },
+        {
+          "key": "r",
+          "name": "Reveal active file",
+          "type": "command",
+          "command": "workbench.files.action.showActiveFileInExplorer"
+        },
+        {
+          "key": "a",
+          "name": "Add file [a]",
+          "type": "command",
+          "command": "explorer.newFile"
+        },
+        {
+          "key": "A",
+          "name": "Add folder [A]",
+          "type": "command",
+          "command": "explorer.newFolder"
+        },
+        {
+          "key": "m",
+          "name": "Rename file [r]",
+          "type": "command",
+          "command": "renameFile"
+        },
+        {
+          "key": "d",
+          "name": "Delete file [d]",
+          "type": "command",
+          "command": "deleteFile"
+        },
+        {
+          "key": "t",
+          "name": "Toggle sidebar",
+          "type": "command",
+          "command": "workbench.action.toggleSidebarVisibility"
+        }
+      ]
+    },
+    {
+      "key": "g",
+      "name": "+Git",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "g",
+          "name": "Source control",
+          "type": "command",
+          "command": "workbench.view.scm"
+        },
+        {
+          "key": "d",
+          "name": "Open change",
+          "type": "command",
+          "command": "git.openChange"
+        },
+        {
+          "key": "s",
+          "name": "Stage file",
+          "type": "command",
+          "command": "git.stage"
+        },
+        {
+          "key": "S",
+          "name": "Stage all",
+          "type": "command",
+          "command": "git.stageAll"
+        },
+        {
+          "key": "u",
+          "name": "Unstage file",
+          "type": "command",
+          "command": "git.unstage"
+        },
+        {
+          "key": "U",
+          "name": "Unstage all",
+          "type": "command",
+          "command": "git.unstageAll"
+        },
+        {
+          "key": "c",
+          "name": "Commit",
+          "type": "command",
+          "command": "git.commit"
+        },
+        {
+          "key": "p",
+          "name": "Push",
+          "type": "command",
+          "command": "git.push"
+        },
+        {
+          "key": "f",
+          "name": "Fetch",
+          "type": "command",
+          "command": "git.fetch"
+        },
+        {
+          "key": "l",
+          "name": "Pull",
+          "type": "command",
+          "command": "git.pull"
+        },
+        {
+          "key": "b",
+          "name": "Checkout branch",
+          "type": "command",
+          "command": "git.checkout"
+        },
+        {
+          "key": "n",
+          "name": "Create branch",
+          "type": "command",
+          "command": "git.createBranch"
+        }
+      ]
+    },
+    {
+      "key": "d",
+      "name": "+Debug",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "s",
+          "name": "Start debug",
+          "type": "command",
+          "command": "workbench.action.debug.start"
+        },
+        {
+          "key": "c",
+          "name": "Continue",
+          "type": "command",
+          "command": "workbench.action.debug.continue"
+        },
+        {
+          "key": "r",
+          "name": "Restart",
+          "type": "command",
+          "command": "workbench.action.debug.restart"
+        },
+        {
+          "key": "x",
+          "name": "Stop",
+          "type": "command",
+          "command": "workbench.action.debug.stop"
+        },
+        {
+          "key": "i",
+          "name": "Step into",
+          "type": "command",
+          "command": "workbench.action.debug.stepInto"
+        },
+        {
+          "key": "o",
+          "name": "Step over",
+          "type": "command",
+          "command": "workbench.action.debug.stepOver"
+        },
+        {
+          "key": "u",
+          "name": "Step out",
+          "type": "command",
+          "command": "workbench.action.debug.stepOut"
+        },
+        {
+          "key": "b",
+          "name": "Toggle breakpoint",
+          "type": "command",
+          "command": "debug.toggleBreakpoint"
+        }
+      ]
+    },
+    {
+      "key": "T",
+      "name": "+Testing",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "c",
+          "name": "Run test at cursor",
+          "type": "command",
+          "command": "testing.runAtCursor"
+        },
+        {
+          "key": "f",
+          "name": "Run current file",
+          "type": "command",
+          "command": "testing.runCurrentFile"
+        },
+        {
+          "key": "a",
+          "name": "Run all tests",
+          "type": "command",
+          "command": "testing.runAll"
+        },
+        {
+          "key": "l",
+          "name": "Re-run last",
+          "type": "command",
+          "command": "testing.reRunLastRun"
+        },
+        {
+          "key": "e",
+          "name": "Re-run failed",
+          "type": "command",
+          "command": "testing.reRunFailTests"
+        },
+        {
+          "key": "d",
+          "name": "Debug test at cursor",
+          "type": "command",
+          "command": "testing.debugAtCursor"
+        },
+        {
+          "key": "o",
+          "name": "Show most recent output",
+          "type": "command",
+          "command": "testing.showMostRecentOutput"
+        },
+        {
+          "key": "p",
+          "name": "Open output peek",
+          "type": "command",
+          "command": "testing.openOutputPeek"
+        }
+      ]
+    },
+    {
+      "key": "x",
+      "name": "+Code",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "j",
+          "name": "Insert cursor below [mj]",
+          "type": "command",
+          "command": "editor.action.insertCursorBelow"
+        },
+        {
+          "key": "k",
+          "name": "Insert cursor above [mk]",
+          "type": "command",
+          "command": "editor.action.insertCursorAbove"
+        },
+        {
+          "key": "J",
+          "name": "Add next occurrence [mJ]",
+          "type": "command",
+          "command": "editor.action.addSelectionToNextFindMatch"
+        },
+        {
+          "key": "K",
+          "name": "Add previous occurrence [mK]",
+          "type": "command",
+          "command": "editor.action.addSelectionToPreviousFindMatch"
+        },
+        {
+          "key": "e",
+          "name": "Expand selection [me]",
+          "type": "command",
+          "command": "editor.action.smartSelect.expand"
+        },
+        {
+          "key": "s",
+          "name": "Shrink selection [ms]",
+          "type": "command",
+          "command": "editor.action.smartSelect.shrink"
+        },
+        {
+          "key": "c",
+          "name": "Toggle line comment [mc]",
+          "type": "command",
+          "command": "editor.action.commentLine"
+        },
+        {
+          "key": "b",
+          "name": "Toggle block comment [mC]",
+          "type": "command",
+          "command": "editor.action.blockComment"
+        }
+      ]
+    },
+    {
+      "key": "t",
+      "name": "+Terminal",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "t",
+          "name": "Toggle terminal",
+          "type": "command",
+          "command": "workbench.action.togglePanel"
+        },
+        {
+          "key": "f",
+          "name": "Focus terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.focus"
+        },
+        {
+          "key": "N",
+          "name": "Next terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.focusNext"
+        },
+        {
+          "key": "p",
+          "name": "Previous terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.focusPrevious"
+        },
+        {
+          "key": "n",
+          "name": "New terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.new"
+        },
+        {
+          "key": "s",
+          "name": "Split terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.split"
+        },
+        {
+          "key": "r",
+          "name": "Run recent command",
+          "type": "command",
+          "command": "workbench.action.terminal.runRecentCommand"
+        },
+        {
+          "key": "k",
+          "name": "Kill terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.kill"
+        }
+      ]
+    },
+    {
+      "key": "u",
+      "name": "+UI",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "t",
+          "name": "+Toggles",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "a",
+              "name": "Activity bar",
+              "type": "command",
+              "command": "workbench.action.toggleActivityBarVisibility"
+            },
+            {
+              "key": "c",
+              "name": "Centered layout",
+              "type": "command",
+              "command": "workbench.action.toggleCenteredLayout"
+            },
+            {
+              "key": "f",
+              "name": "Full screen",
+              "type": "command",
+              "command": "workbench.action.toggleFullScreen"
+            },
+            {
+              "key": "m",
+              "name": "Minimap",
+              "type": "command",
+              "command": "editor.action.toggleMinimap"
+            },
+            {
+              "key": "n",
+              "name": "Line numbers",
+              "type": "command",
+              "command": "editor.action.toggleLineNumbers"
+            },
+            {
+              "key": "w",
+              "name": "Word wrap",
+              "type": "command",
+              "command": "editor.action.toggleWordWrap"
+            },
+            {
+              "key": "z",
+              "name": "Zen mode",
+              "type": "command",
+              "command": "workbench.action.toggleZenMode"
+            }
+          ]
+        },
+        {
+          "key": "f",
+          "name": "+Focus",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "h",
+              "name": "Focus left [ctrl+h]",
+              "type": "command",
+              "command": "workbench.action.focusLeftGroup"
+            },
+            {
+              "key": "j",
+              "name": "Focus below [ctrl+j]",
+              "type": "command",
+              "command": "workbench.action.focusBelowGroup"
+            },
+            {
+              "key": "k",
+              "name": "Focus above [ctrl+k]",
+              "type": "command",
+              "command": "workbench.action.focusAboveGroup"
+            },
+            {
+              "key": "l",
+              "name": "Focus right [ctrl+l]",
+              "type": "command",
+              "command": "workbench.action.focusRightGroup"
+            },
+            {
+              "key": "n",
+              "name": "Next group",
+              "type": "command",
+              "command": "workbench.action.focusNextGroup"
+            },
+            {
+              "key": "p",
+              "name": "Previous group",
+              "type": "command",
+              "command": "workbench.action.focusPreviousGroup"
+            }
+          ]
+        },
+        {
+          "key": "m",
+          "name": "+Move Editor",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "h",
+              "name": "Move editor left",
+              "type": "command",
+              "command": "workbench.action.moveEditorToPreviousGroup"
+            },
+            {
+              "key": "l",
+              "name": "Move editor right",
+              "type": "command",
+              "command": "workbench.action.moveEditorToNextGroup"
+            }
+          ]
+        },
+        {
+          "key": "s",
+          "name": "+Split",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "d",
+              "name": "Split down",
+              "type": "command",
+              "command": "workbench.action.splitEditorDown"
+            },
+            {
+              "key": "r",
+              "name": "Split right",
+              "type": "command",
+              "command": "workbench.action.splitEditorRight"
+            }
+          ]
+        },
+        {
+          "key": "g",
+          "name": "+Group",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "c",
+              "name": "Close group",
+              "type": "command",
+              "command": "workbench.action.closeEditorsInGroup"
+            },
+            {
+              "key": "o",
+              "name": "Close other groups",
+              "type": "command",
+              "command": "workbench.action.closeEditorsInOtherGroups"
+            },
+            {
+              "key": "m",
+              "name": "Maximize panel",
+              "type": "command",
+              "command": "workbench.action.toggleMaximizedPanel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "v",
+      "name": "+View",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "e",
+          "name": "Explorer view",
+          "type": "command",
+          "command": "workbench.view.explorer"
+        },
+        {
+          "key": "d",
+          "name": "Debug view",
+          "type": "command",
+          "command": "workbench.view.debug"
+        },
+        {
+          "key": "t",
+          "name": "Testing view",
+          "type": "command",
+          "command": "workbench.view.extension.test"
+        },
+        {
+          "key": "x",
+          "name": "Extensions view",
+          "type": "command",
+          "command": "workbench.view.extensions"
+        },
+        {
+          "key": "o",
+          "name": "Output panel",
+          "type": "command",
+          "command": "workbench.action.output.toggleOutput"
+        },
+        {
+          "key": "c",
+          "name": "Debug console",
+          "type": "command",
+          "command": "workbench.action.debug.console.focus"
+        }
+      ]
+    },
+    {
+      "key": "S",
+      "name": "+Settings",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "S",
+          "name": "Open Settings (JSON)",
+          "type": "command",
+          "command": "workbench.action.openSettingsJson"
+        },
+        {
+          "key": "s",
+          "name": "Open Settings (UI)",
+          "type": "command",
+          "command": "workbench.action.openSettings"
+        }
+      ]
+    }
+  ],
+  "window.autoDetectColorScheme": true,
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.preferredDarkColorTheme": "Catppuccin Mocha",
+  "workbench.preferredLightColorTheme": "Catppuccin Latte",
+  "window.commandCenter": true,
+  "projectManager.git.baseFolders": [
+    "~/dev/nu",
+    "~/dev/me"
+  ],
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "calva.paredit.defaultKeyMap": "strict",
+  "calva.autoOpenInspector": false,
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true
+  }
+}
