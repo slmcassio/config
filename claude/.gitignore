@@ -1,0 +1,13 @@
+settings.json
+settings.json.tmp
+# Profiles and knowledge live in config-private (sibling private repo)
+profiles/*.env
+profiles/*.json
+# Example files are committed to the public repo as reference
+!profiles/example.env
+!profiles/example.extra.json
+knowledge/**
+!knowledge/README.md
+!knowledge/domain/
+!knowledge/domain/glossary/
+!knowledge/domain/glossary/index.md
